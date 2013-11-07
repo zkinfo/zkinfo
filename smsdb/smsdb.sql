@@ -1,22 +1,22 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50611
-Source Host           : localhost:3306
-Source Database       : smsdb
+ Source Server         : localhost
+ Source Server Version : 50144
+ Source Host           : localhost
+ Source Database       : smsdb
 
-Target Server Type    : MYSQL
-Target Server Version : 50611
-File Encoding         : 65001
+ Target Server Version : 50144
+ File Encoding         : utf-8
 
-Date: 2013-11-06 10:49:04
+ Date: 11/06/2013 21:08:21 PM
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for as_properties
+--  Table structure for `as_properties`
 -- ----------------------------
 DROP TABLE IF EXISTS `as_properties`;
 CREATE TABLE `as_properties` (
@@ -32,7 +32,7 @@ CREATE TABLE `as_properties` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='行政信息变更表';
 
 -- ----------------------------
--- Table structure for sms_administrative
+--  Table structure for `sms_administrative`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_administrative`;
 CREATE TABLE `sms_administrative` (
@@ -52,7 +52,7 @@ CREATE TABLE `sms_administrative` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='行政信息表';
 
 -- ----------------------------
--- Table structure for sms_class
+--  Table structure for `sms_class`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_class`;
 CREATE TABLE `sms_class` (
@@ -64,7 +64,7 @@ CREATE TABLE `sms_class` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for sms_class_score
+--  Table structure for `sms_class_score`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_class_score`;
 CREATE TABLE `sms_class_score` (
@@ -89,7 +89,7 @@ CREATE TABLE `sms_class_score` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for sms_extra_exam
+--  Table structure for `sms_extra_exam`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_extra_exam`;
 CREATE TABLE `sms_extra_exam` (
@@ -105,11 +105,11 @@ CREATE TABLE `sms_extra_exam` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for sms_grade
+--  Table structure for `sms_grade`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_grade`;
 CREATE TABLE `sms_grade` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `grade_id` int(11) NOT NULL AUTO_INCREMENT,
   `school_id` bigint(20) DEFAULT NULL,
   `grade_name` varchar(50) DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE `sms_grade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for sms_purview
+--  Table structure for `sms_purview`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_purview`;
 CREATE TABLE `sms_purview` (
@@ -133,7 +133,7 @@ CREATE TABLE `sms_purview` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='权限控制表';
 
 -- ----------------------------
--- Table structure for sms_school
+--  Table structure for `sms_school`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_school`;
 CREATE TABLE `sms_school` (
@@ -149,7 +149,7 @@ CREATE TABLE `sms_school` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='学校信息表';
 
 -- ----------------------------
--- Table structure for sms_student
+--  Table structure for `sms_student`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_student`;
 CREATE TABLE `sms_student` (
@@ -166,10 +166,10 @@ CREATE TABLE `sms_student` (
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='学生信息表';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='学生信息表';
 
 -- ----------------------------
--- Table structure for sms_teacher
+--  Table structure for `sms_teacher`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_teacher`;
 CREATE TABLE `sms_teacher` (
@@ -189,7 +189,7 @@ CREATE TABLE `sms_teacher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='教师信息表';
 
 -- ----------------------------
--- Table structure for sms_user
+--  Table structure for `sms_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_user`;
 CREATE TABLE `sms_user` (
@@ -211,7 +211,7 @@ CREATE TABLE `sms_user` (
 ) ENGINE=MyISAM AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='用户帐号表';
 
 -- ----------------------------
--- Table structure for std_examination
+--  Table structure for `std_examination`
 -- ----------------------------
 DROP TABLE IF EXISTS `std_examination`;
 CREATE TABLE `std_examination` (
@@ -225,10 +225,10 @@ CREATE TABLE `std_examination` (
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37135 DEFAULT CHARSET=utf8 COMMENT='学生考试信息表';
+) ENGINE=MyISAM AUTO_INCREMENT=37136 DEFAULT CHARSET=utf8 COMMENT='学生考试信息表';
 
 -- ----------------------------
--- Table structure for std_properties
+--  Table structure for `std_properties`
 -- ----------------------------
 DROP TABLE IF EXISTS `std_properties`;
 CREATE TABLE `std_properties` (
@@ -246,7 +246,7 @@ CREATE TABLE `std_properties` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='学生信息变更表';
 
 -- ----------------------------
--- Table structure for std_sorce
+--  Table structure for `std_sorce`
 -- ----------------------------
 DROP TABLE IF EXISTS `std_sorce`;
 CREATE TABLE `std_sorce` (
@@ -270,10 +270,10 @@ CREATE TABLE `std_sorce` (
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37135 DEFAULT CHARSET=utf8 COMMENT='学生成绩表';
+) ENGINE=MyISAM AUTO_INCREMENT=37136 DEFAULT CHARSET=utf8 COMMENT='学生成绩表';
 
 -- ----------------------------
--- Table structure for tch_properties
+--  Table structure for `tch_properties`
 -- ----------------------------
 DROP TABLE IF EXISTS `tch_properties`;
 CREATE TABLE `tch_properties` (
@@ -291,3 +291,11 @@ CREATE TABLE `tch_properties` (
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='教师信息变更表';
+
+-- ----------------------------
+--  View structure for `students_score`
+-- ----------------------------
+DROP VIEW IF EXISTS `students_score`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `students_score` AS select `std_sorce`.`std_id` AS `std_id`,`sms_student`.`std_name` AS `std_name`,`std_sorce`.`exam_id` AS `exam_id`,`std_examination`.`Examination_name` AS `Examination_name`,`std_sorce`.`chinese` AS `chinese`,`std_sorce`.`math` AS `math`,`std_sorce`.`english` AS `english`,`std_sorce`.`chemistry` AS `chemistry`,`std_sorce`.`biological` AS `biological`,`std_sorce`.`science` AS `science`,`std_sorce`.`physical` AS `physical`,`std_sorce`.`society` AS `society`,`std_sorce`.`political` AS `political`,`std_sorce`.`history` AS `history`,`std_sorce`.`geography` AS `geography`,`std_sorce`.`total_sorce` AS `total_sorce`,`std_examination`.`cdate` AS `cdate` from ((`std_sorce` join `std_examination`) join `sms_student`);
+
+SET FOREIGN_KEY_CHECKS = 1;

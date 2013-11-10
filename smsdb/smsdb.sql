@@ -9,17 +9,17 @@
  Target Server Version : 50144
  File Encoding         : utf-8
 
- Date: 11/06/2013 21:08:21 PM
+ Date: 11/10/2013 15:34:39 PM
 */
 
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
---  Table structure for `as_properties`
+--  Table structure for `as_property`
 -- ----------------------------
-DROP TABLE IF EXISTS `as_properties`;
-CREATE TABLE `as_properties` (
+DROP TABLE IF EXISTS `as_property`;
+CREATE TABLE `as_property` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `as_id` bigint(20) NOT NULL COMMENT '主帐号ID',
   `as_code` varchar(20) DEFAULT '0' COMMENT '行政编码',
@@ -56,8 +56,8 @@ CREATE TABLE `sms_administrative` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_class`;
 CREATE TABLE `sms_class` (
-  `class_id` int(11) NOT NULL AUTO_INCREMENT,
-  `grade_id` int(11) DEFAULT NULL,
+  `class_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `grade_id` bigint(20) DEFAULT NULL,
   `class_name` varchar(50) DEFAULT NULL,
   `sum_student` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`class_id`)
@@ -68,40 +68,26 @@ CREATE TABLE `sms_class` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_class_score`;
 CREATE TABLE `sms_class_score` (
-  `class_score_id` int(11) NOT NULL AUTO_INCREMENT,
-  `class_id` int(11) DEFAULT NULL,
-  `grade_id` int(11) DEFAULT NULL,
-  `exam_id` varchar(255) DEFAULT NULL,
-  `chinese` tinyint(4) DEFAULT NULL,
-  `math` tinyint(4) DEFAULT NULL,
-  `english` tinyint(4) DEFAULT NULL,
-  `chemistry` tinyint(4) DEFAULT NULL,
-  `physical` tinyint(4) DEFAULT NULL,
-  `biological` tinyint(4) DEFAULT NULL,
-  `science` tinyint(4) DEFAULT NULL,
-  `society` tinyint(4) DEFAULT NULL,
-  `political` tinyint(4) DEFAULT NULL,
-  `history` tinyint(4) DEFAULT NULL,
-  `geography` tinyint(4) DEFAULT NULL,
+  `class_score_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `class_id` bigint(20) DEFAULT NULL,
+  `grade_id` bigint(20) DEFAULT NULL,
+  `exam_id` bigint(20) DEFAULT NULL,
+  `chinese` varchar(20) DEFAULT NULL,
+  `math` varchar(20) DEFAULT NULL,
+  `english` varchar(20) DEFAULT NULL COMMENT '英语',
+  `chemistry` varchar(20) DEFAULT NULL COMMENT '化学',
+  `physical` varchar(20) DEFAULT NULL COMMENT '物理',
+  `biological` varchar(20) DEFAULT NULL COMMENT '生物',
+  `science` varchar(20) DEFAULT NULL COMMENT '科学',
+  `society` varchar(20) DEFAULT NULL COMMENT '社会',
+  `political` varchar(20) DEFAULT NULL COMMENT '政治',
+  `history` varchar(20) DEFAULT NULL COMMENT '历史',
+  `geography` varchar(20) DEFAULT NULL COMMENT '地理',
+  `wenzong` varchar(20) DEFAULT NULL,
+  `lizong` varchar(20) DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`class_score_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Table structure for `sms_extra_exam`
--- ----------------------------
-DROP TABLE IF EXISTS `sms_extra_exam`;
-CREATE TABLE `sms_extra_exam` (
-  `extra_id` int(11) NOT NULL AUTO_INCREMENT,
-  `stu_id` int(11) DEFAULT NULL,
-  `extra_title` varchar(200) DEFAULT NULL,
-  `extra_score` varchar(255) DEFAULT NULL,
-  `exam_date` datetime DEFAULT NULL,
-  `sum_employee` tinyint(4) DEFAULT NULL,
-  `cdate` datetime DEFAULT NULL,
-  `edate` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`extra_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -109,7 +95,7 @@ CREATE TABLE `sms_extra_exam` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_grade`;
 CREATE TABLE `sms_grade` (
-  `grade_id` int(11) NOT NULL AUTO_INCREMENT,
+  `grade_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `school_id` bigint(20) DEFAULT NULL,
   `grade_name` varchar(50) DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
@@ -228,10 +214,26 @@ CREATE TABLE `std_examination` (
 ) ENGINE=MyISAM AUTO_INCREMENT=37136 DEFAULT CHARSET=utf8 COMMENT='学生考试信息表';
 
 -- ----------------------------
---  Table structure for `std_properties`
+--  Table structure for `std_extra_exam`
 -- ----------------------------
-DROP TABLE IF EXISTS `std_properties`;
-CREATE TABLE `std_properties` (
+DROP TABLE IF EXISTS `std_extra_exam`;
+CREATE TABLE `std_extra_exam` (
+  `extra_id` int(11) NOT NULL AUTO_INCREMENT,
+  `stu_id` int(11) DEFAULT NULL,
+  `exam_id` int(11) DEFAULT NULL,
+  `extra_score` tinyint(6) DEFAULT NULL,
+  `exam_date` datetime DEFAULT NULL,
+  `sum_employee` tinyint(4) DEFAULT NULL,
+  `cdate` datetime DEFAULT NULL,
+  `edate` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`extra_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `std_property`
+-- ----------------------------
+DROP TABLE IF EXISTS `std_property`;
+CREATE TABLE `std_property` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `std_id` bigint(20) NOT NULL COMMENT '主帐号ID',
   `std_code` int(11) DEFAULT '0' COMMENT '学号',
@@ -253,30 +255,32 @@ CREATE TABLE `std_sorce` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `std_id` bigint(20) NOT NULL COMMENT '学生id',
   `exam_id` bigint(20) NOT NULL COMMENT '考试id',
-  `chinese` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `math` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `english` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `chemistry` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `physical` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `biological` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `science` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `society` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `political` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `history` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `geography` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `total_sorce` tinyint(4) DEFAULT '0' COMMENT '成绩',
-  `check_type` tinyint(4) DEFAULT '0' COMMENT '登记状体',
+  `chinese` varchar(20) DEFAULT '0' COMMENT '成绩',
+  `math` varchar(20) DEFAULT '0' COMMENT '成绩',
+  `english` varchar(20) DEFAULT '0' COMMENT '成绩',
+  `chemistry` varchar(20) DEFAULT '0' COMMENT '化学',
+  `physical` varchar(20) DEFAULT '0' COMMENT '物理',
+  `biological` varchar(20) DEFAULT '0' COMMENT '生物',
+  `science` varchar(20) DEFAULT '0' COMMENT '科学',
+  `society` varchar(20) DEFAULT '0' COMMENT '社会',
+  `political` varchar(20) DEFAULT '0' COMMENT '政治',
+  `history` varchar(20) DEFAULT '0' COMMENT '历史',
+  `geography` varchar(20) DEFAULT '0' COMMENT '地理',
+  `wenzong` varchar(20) DEFAULT NULL,
+  `lizong` varchar(20) DEFAULT NULL,
+  `total_sorce` varchar(20) DEFAULT '0' COMMENT '成绩',
+  `check_status` tinyint(4) DEFAULT '0' COMMENT '登记状体',
   `check_time` datetime DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37136 DEFAULT CHARSET=utf8 COMMENT='学生成绩表';
+) ENGINE=MyISAM AUTO_INCREMENT=37138 DEFAULT CHARSET=utf8 COMMENT='学生成绩表';
 
 -- ----------------------------
---  Table structure for `tch_properties`
+--  Table structure for `tch_property`
 -- ----------------------------
-DROP TABLE IF EXISTS `tch_properties`;
-CREATE TABLE `tch_properties` (
+DROP TABLE IF EXISTS `tch_property`;
+CREATE TABLE `tch_property` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `tch_id` bigint(20) NOT NULL COMMENT '主帐号ID',
   `tch_code` varchar(20) DEFAULT '0' COMMENT '教师编码',

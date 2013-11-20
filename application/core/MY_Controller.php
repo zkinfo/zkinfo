@@ -18,12 +18,12 @@ class MY_Controller extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->library('mi_common');
+		//$this->load->library('mi_common');
 		$this->load->library('session');
 		$this->load->library('auth');
 		$this->load->helper('url');
-		$this->load->helper('array');
-		$this->load->helper('view');
+		//$this->load->helper('array');
+		//$this->load->helper('view');
 		
 		// 维护页面开启/关闭
 		$is_weihu = $this->config->item('is_weihu');
@@ -35,9 +35,8 @@ class MY_Controller extends CI_Controller {
 		}
 		
 		// 获取位置，ip定位;  	#TODO:手机版、智能浏览器将考虑只能定位
-		$this->set_locate();
-
-		// 全局回调变量 	#TODO:定义全局数组，整理子类的全局变量
+		//$locate = $this->set_locate();	
+		/*// 全局回调变量 	#TODO:定义全局数组，整理子类的全局变量
 		$this->_data['siteurl'] 	= $this->config->item('base_url');
 		$this->_data['imgurl'] 		= $this->config->item('img_url');
 		$this->_data['resurl'] 		= $this->config->item('res_url');
@@ -97,11 +96,14 @@ class MY_Controller extends CI_Controller {
 			$this->output->enable_profiler(TRUE);
 		}
 		
-		$this->_data['role_ids'] = $this->session->userdata('role_ids');
+		$this->_data['role_ids'] = $this->session->userdata('role_ids');*/
 	}
 
 	/**
 	 * 计算分页
+	 * danchex:
+	 *     我犯了一个错误，不应该在全局加上这么多东西，而是应该使用对象，由用户决定是否使用对象组装方式。
+	 *     计划删除这里。
 	 */
 	protected function pagingExec()
 	{
@@ -116,38 +118,23 @@ class MY_Controller extends CI_Controller {
 		$query = $this->_data['server']['query'] = $url.'?'.geturl($request);
 		$this->_data['paging']['multi'] = str_replace('??','?',multi($count, $perpage, $page, $query));
 	}
-
-	/**
-	 * 合并GET, POST请求数组
-	 */
-	private function request()
-	{
-		if ( $this->input->get() ) {
-			if ( $this->input->post() ) {
-				return array_merge($this->input->get(), $this->input->post());
-			} else {
-				return $this->input->get();
-			}
-		} else {
-			return $this->input->post();
-		}
-	}
-
 	/**
 	 * 登录验证
 	 */
     private function check_auth($userid=0)
     {
     	// 域名白名单，现在绑定3个：正式域名，线上域名，开发时域名 	[TODO:使用标准配置函数，统一管理]
-		$allow_domain = array('500mi.com', '500mi.org');
+
+		$allow_domain = array('tlcjw.com');
+
 		if ( ! in_array(substr($_SERVER['SERVER_NAME'],-9), $allow_domain) ) {
-			redirect('http://passport.500mi.com/login');
+			redirect('http://www.tlcjw.com');
 			// [TODO:前后台、各个应用使用标准配置，而且互相兼容、冗余存储]
 			return false;
 		}
 		// 登录验证的具体实现
 		if ( ! $this->auth->check_auth() ) {
-			redirect('http://passport.500mi.com/login', 'refresh');
+			redirect('http://www.tlcjw.com/login', 'refresh');
 		}
 
 		// 检查ACL权限
@@ -157,52 +144,16 @@ class MY_Controller extends CI_Controller {
         $url = substr($this->router->fetch_directory(),10).$this->_class.'/'.$this->_method;
         // var_dump($url);
         // 非法->跳转
-		if( ! $this->acl->check_acl($url) ) {
-			die('permission denied. <br />无权限···'); //permission denied.
+		if( ! $this->acl->isAllowedUrl($url) ) {
+			die('error:101<br /> permission denied. <br />无权限···'); //permission denied.
 			redirect($_SERVER['HTTP_REFERER'], 'refresh');
 			//echo '<script>window.location.href="/work/help/showmessage";</script>';
 			return;
+		} else {
+			return true;
 		}
     }
 
-    /**
-     * 设置用户所在省市
-     */
-    private function set_locate()
-    {
-    	$locate = $this->session->userdata('locate');
-    	$province = "浙江";
-    	$city = "杭州";
-    	if (!$locate)
-    	{
-    		require APPPATH."third_party/ip/ip.php";	
-    		$ip = $_SERVER["REMOTE_ADDR"];
-    		$idADDR = new IpLocation();
-    		$res = $idADDR->getlocation($ip);
-    		$data = eval('return '.iconv('gbk','utf-8',var_export($res,true)).';');
-    		$flag = stripos($data["country"],"省");
-    		
-    		if ($flag) {
-    			$tmp = explode("省", $data["country"]);
-    			$province = $tmp[0];
-    			$list = explode("市",$tmp[1]);
-    			$city = $list[0];
-    		}
-    		
-    		$locate = $province."-".$city;
-    		$this->session->set_userdata('locate', $locate);
-    	}
-
-    	// 获取城市ID
-    	$area = $this->session->userdata('area');
-    	if (!$area) {
-    		$this->load->helper('andor');
-    		$this->session->set_userdata('area', 1);
-    		//$this->session->set_userdata('area', getCityIdByTitle($city));
-    	}
-    	
-    	return $locate;
-    }
 }
 
 /* End of file: MY_Controller.php */

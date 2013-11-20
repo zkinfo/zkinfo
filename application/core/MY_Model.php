@@ -62,11 +62,8 @@ class MY_Model extends CI_Model
 	 */
 	public function update($data, $id)
 	{
-		if ( ! isset($data['edate'])) {			
-			$data['edate'] = date('Y-m-d H:i:s');
-		}
 		if (is_array($id)) {
-			$this->db->where($id, null, false);
+			$this->db->where($id);
 		} else {
 			$this->db->where('id', $id);
 		}
@@ -82,32 +79,10 @@ class MY_Model extends CI_Model
 	 */
 	public function delete($id, $real = false)
 	{
-		if ($real) {
-			return $bool = $this->_realDelete($id);
-		} else {
-			$data = array(
-				'status' => '-1',
-				'edate'  =>	date('Y-m-d H:i:s')
-			);
-			return $bool = $this->update($data, $id);
-		}
-	}
-
-	/**
-	 * 删除数据 (真删除)
-	 *     注：此方法变更为私有方法，请调用 del($id, true) 实现同功能
-	 *
-	 * @param 	fixed 	$id
-	 * @return 	int
-	 */
-	private function _realDelete($id)
-	{
-		if (is_array($id)) {
-			$this->db->where($id, null, false);
-		} else {
-			$this->db->where('id', $id);
-		}
-		return $bool = $this->db->delete($this->table_name);
+		$data = array(
+			'status' => '-1'
+		);
+		return $bool = $this->update($data, $id);
 	}
 
 	/**
@@ -154,113 +129,23 @@ class MY_Model extends CI_Model
 	 * @param 	array 	$like
 	 * @return 	array
 	 */
-	public function getList($params = array(), $fields = '*', $start = 0, $perpage = 0, 
-							$order 	= '', $sort = '', $like = array(), $group = array())
+	public function getList($params = array(), $fields = '*', $page = 1, $pagesize = 20, $order_by = null)
 	{
-		if ($sort == '') {
-			$sort = ' ';
-		}
+		if ($page < 1) $page = 1;
+		$start = ($page - 1) * $pagesize;
+		
 		if ( ! isset($params['status'])) {
 			$params['status <>'] = '-1';
 		}
-		if ($perpage) {
-			$this->db->limit($perpage, $start);
+		if ($pagesize) {
+			$this->db->limit($pagesize, $start);
 		}
-		if ($order && $sort) {
-			$this->db->order_by($order, $sort);
+		if ($order_by) {
+			$this->db->order_by($order_by, '');
 		}
-		if (!empty($group) && count($group) > 0) {
-			$this->db->group_by($group);
-		}		
-		$q = $this->db->select($fields, false)->where($params)->or_like($like)->get($this->table_name);
+		$q = $this->db->select($fields, false)->where($params)->get($this->table_name);
 		return $list = $q->result_array();
 	}
-
-	/**
-	 * 模糊查询
-	 *     注：此版本变更为通用方法，转调List方法
-	 *
-	 * @param 	array 	$like
-	 * @param 	array 	$params
-	 * @param 	string 	$data
-	 * @param 	int 	$start
-	 * @param 	int 	$perpage
-	 * @param 	string 	$order
-	 * @param 	string 	$sort
-	 * @return 	array 	array
-	 */
-	public function getLike($like = array(), $params = array(), $fields = '*', 
-							$start = 0, $perpage = 0, $order = '', $sort = '')
-	{
-		return $list = $this->getList($params, $fields, $start, $perpage, $order, $sort, $like);
-	}
-
-	/**
-	 * In 查询
-	 *
-	 * @param 	string 	$inField
-	 * @param 	array 	$inArray
-	 * @param 	array 	$params
-	 * @param 	string 	$data
-	 * @param 	int 	$start
-	 * @param 	int 	$perpage
-	 * @param 	string 	$order
-	 * @param 	string 	$sort
-	 * @return 	array 	array
-	 */
-	public function getIn($inField, $inArray, $params = array(), $fields = '*', 
-						  $start = 0, $perpage = 0, $order = '', $sort = '')
-	{
-		if ( empty($inArray) ) {
-			return array();
-		}
-		$inString = implode(',', $inArray);
-		$params["$inField in ($inString)"] = null;
-		return $list = $this->getList($params, $fields, $start, $perpage, $order, $sort);
-	}
-
-	/**
-	 * 查询In记录条数
-	 *
-	 * @param 	string 	$inField
-	 * @param 	array 	$inArray
-	 * @param 	array 	$params
-	 * @return 	int
-	 */
-	public function getInCount($inField, $inArray, $params = array())
-	{
-		if ( empty($inArray) ) {
-			return 0;
-		}
-		$list = $this->getIn($inField, $inArray, $params, $fields=' count(*) as num ');
-		if (isset($list[0]['num'])) {
-			return $count = intval($list[0]['num']);
-		} else {
-			return 0;
-		}
-	}
-
-	/**
-	 * 组定义 SQL 查询
-	 *
-	 * @param string $sql
-	 * @return array
-	 */
-	public function getQuery($sql)
-	{
-		return $list = $this->db->query($sql)->result_array();
-	}
-
-	/**
-	 * 组定义 SQL 查询
-	 *
-	 * @param string $sql
-	 * @return array
-	 */
-	public function sqlQuery($sql)
-	{
-		return $this->db->query($sql);
-	}	
 }
 
 /* End of file: MY_Model.php */

@@ -21,15 +21,15 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `as_property`;
 CREATE TABLE `as_property` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `as_id` bigint(20) NOT NULL COMMENT 'ä¸»å¸å·ID',
-  `as_code` varchar(20) DEFAULT '0' COMMENT 'è¡Œæ”¿ç¼–ç ',
-  `position` varchar(20) DEFAULT NULL COMMENT 'èŒåŠ¡',
-  `agency_type` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
-  `status` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
+  `as_id` bigint(20) NOT NULL COMMENT 'Ö÷ÕÊºÅID',
+  `as_code` varchar(20) DEFAULT '0' COMMENT 'ĞĞÕş±àÂë',
+  `position` varchar(20) DEFAULT NULL COMMENT 'Ö°Îñ',
+  `agency_type` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
+  `status` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='è¡Œæ”¿ä¿¡æ¯å˜æ›´è¡¨';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ĞĞÕşĞÅÏ¢±ä¸ü±í';
 
 -- ----------------------------
 --  Table structure for `sms_administrative`
@@ -37,19 +37,19 @@ CREATE TABLE `as_property` (
 DROP TABLE IF EXISTS `sms_administrative`;
 CREATE TABLE `sms_administrative` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL COMMENT 'ä¸»å¸å·ID',
-  `as_name` varchar(100) DEFAULT NULL COMMENT 'è¡Œæ”¿å§“å',
-  `address` varchar(200) DEFAULT NULL COMMENT 'å…·ä½“åœ°å€',
-  `contact_phone` varchar(20) DEFAULT NULL COMMENT 'è”ç³»ç”µè¯',
-  `contact_mobile` varchar(11) DEFAULT NULL COMMENT 'æ‰‹æœº',
-  `status` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
-  `employ_date` datetime DEFAULT NULL COMMENT 'å…¥èŒæ—¶é—´ï¼Œç”¨æ¥è®¡ç®—å·¥é¾„',
+  `user_id` bigint(20) NOT NULL COMMENT 'Ö÷ÕÊºÅID',
+  `as_name` varchar(100) DEFAULT NULL COMMENT 'ĞĞÕşĞÕÃû',
+  `address` varchar(200) DEFAULT NULL COMMENT '¾ßÌåµØÖ·',
+  `contact_phone` varchar(20) DEFAULT NULL COMMENT 'ÁªÏµµç»°',
+  `contact_mobile` varchar(11) DEFAULT NULL COMMENT 'ÊÖ»ú',
+  `status` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
+  `employ_date` datetime DEFAULT NULL COMMENT 'ÈëÖ°Ê±¼ä£¬ÓÃÀ´¼ÆËã¹¤Áä',
   `birthday` datetime DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='è¡Œæ”¿ä¿¡æ¯è¡¨';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ĞĞÕşĞÅÏ¢±í';
 
 -- ----------------------------
 --  Table structure for `sms_class`
@@ -74,15 +74,15 @@ CREATE TABLE `sms_class_score` (
   `exam_id` bigint(20) DEFAULT NULL,
   `chinese` varchar(20) DEFAULT NULL,
   `math` varchar(20) DEFAULT NULL,
-  `english` varchar(20) DEFAULT NULL COMMENT 'è‹±è¯­',
-  `chemistry` varchar(20) DEFAULT NULL COMMENT 'åŒ–å­¦',
-  `physical` varchar(20) DEFAULT NULL COMMENT 'ç‰©ç†',
-  `biological` varchar(20) DEFAULT NULL COMMENT 'ç”Ÿç‰©',
-  `science` varchar(20) DEFAULT NULL COMMENT 'ç§‘å­¦',
-  `society` varchar(20) DEFAULT NULL COMMENT 'ç¤¾ä¼š',
-  `political` varchar(20) DEFAULT NULL COMMENT 'æ”¿æ²»',
-  `history` varchar(20) DEFAULT NULL COMMENT 'å†å²',
-  `geography` varchar(20) DEFAULT NULL COMMENT 'åœ°ç†',
+  `english` varchar(20) DEFAULT NULL COMMENT 'Ó¢Óï',
+  `chemistry` varchar(20) DEFAULT NULL COMMENT '»¯Ñ§',
+  `physical` varchar(20) DEFAULT NULL COMMENT 'ÎïÀí',
+  `biological` varchar(20) DEFAULT NULL COMMENT 'ÉúÎï',
+  `science` varchar(20) DEFAULT NULL COMMENT '¿ÆÑ§',
+  `society` varchar(20) DEFAULT NULL COMMENT 'Éç»á',
+  `political` varchar(20) DEFAULT NULL COMMENT 'ÕşÖÎ',
+  `history` varchar(20) DEFAULT NULL COMMENT 'ÀúÊ·',
+  `geography` varchar(20) DEFAULT NULL COMMENT 'µØÀí',
   `wenzong` varchar(20) DEFAULT NULL,
   `lizong` varchar(20) DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
@@ -109,14 +109,14 @@ CREATE TABLE `sms_grade` (
 DROP TABLE IF EXISTS `sms_purview`;
 CREATE TABLE `sms_purview` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `role_id` int(11) DEFAULT '0' COMMENT '0é»˜è®¤ 1å­¦ç”Ÿ 2æ•™å¸ˆ 3è¡Œæ”¿äººå‘˜ 100ç®¡ç†å‘˜',
-  `role_attribute` bigint(20) DEFAULT '0' COMMENT 'è§’è‰²å±æ€§ï¼Œæ ‡è®°ï¼ŒæŒ‰ä½ä¸ï¼Œ1,2,4 ----1024ç³»ç»Ÿä¿ç•™æƒé™',
-  `as_url` varchar(20) DEFAULT NULL COMMENT 'èƒ½è®¿é—®è·¯å¾„',
-  `status` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
+  `role_id` int(11) DEFAULT '0' COMMENT '0Ä¬ÈÏ 1Ñ§Éú 2½ÌÊ¦ 3ĞĞÕşÈËÔ± 100¹ÜÀíÔ±',
+  `role_attribute` bigint(20) DEFAULT '0' COMMENT '½ÇÉ«ÊôĞÔ£¬±ê¼Ç£¬°´Î»Óë£¬1,2,4 ----1024ÏµÍ³±£ÁôÈ¨ÏŞ',
+  `as_url` varchar(20) DEFAULT NULL COMMENT 'ÄÜ·ÃÎÊÂ·¾¶',
+  `status` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='æƒé™æ§åˆ¶è¡¨';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='È¨ÏŞ¿ØÖÆ±í';
 
 -- ----------------------------
 --  Table structure for `sms_school`
@@ -124,15 +124,15 @@ CREATE TABLE `sms_purview` (
 DROP TABLE IF EXISTS `sms_school`;
 CREATE TABLE `sms_school` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `school_code` int(11) DEFAULT '0' COMMENT '0é»˜è®¤ 1å­¦ç”Ÿ 2æ•™å¸ˆ 3è¡Œæ”¿äººå‘˜ 100ç®¡ç†å‘˜',
-  `school_name` varchar(80) DEFAULT NULL COMMENT 'èŒåŠ¡',
-  `sum_employee` int(11) DEFAULT '0' COMMENT 'æ•™å¸ˆäººæ•°',
-  `address` varchar(200) DEFAULT NULL COMMENT 'å…·ä½“åœ°å€',
-  `status` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
+  `school_code` int(11) DEFAULT '0' COMMENT '0Ä¬ÈÏ 1Ñ§Éú 2½ÌÊ¦ 3ĞĞÕşÈËÔ± 100¹ÜÀíÔ±',
+  `school_name` varchar(80) DEFAULT NULL COMMENT 'Ö°Îñ',
+  `sum_employee` int(11) DEFAULT '0' COMMENT '½ÌÊ¦ÈËÊı',
+  `address` varchar(200) DEFAULT NULL COMMENT '¾ßÌåµØÖ·',
+  `status` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='å­¦æ ¡ä¿¡æ¯è¡¨';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Ñ§Ğ£ĞÅÏ¢±í';
 
 -- ----------------------------
 --  Table structure for `sms_student`
@@ -140,19 +140,19 @@ CREATE TABLE `sms_school` (
 DROP TABLE IF EXISTS `sms_student`;
 CREATE TABLE `sms_student` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL COMMENT 'ä¸»å¸å·ID',
-  `std_name` varchar(100) DEFAULT NULL COMMENT 'å­¦ç”Ÿå§“å',
-  `address` varchar(200) DEFAULT NULL COMMENT 'å…·ä½“åœ°å€',
-  `contact_phone` varchar(20) DEFAULT NULL COMMENT 'è”ç³»ç”µè¯',
-  `contact_mobile` varchar(11) DEFAULT NULL COMMENT 'æ‰‹æœº',
-  `status` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
-  `enrollment_date` datetime DEFAULT NULL COMMENT 'å…¥å­¦æ—¶é—´',
-  `birthday` datetime DEFAULT NULL COMMENT 'ç”¨æ¥è®¡ç®—å­¦ç”Ÿå¹´é¾„',
+  `user_id` bigint(20) NOT NULL COMMENT 'Ö÷ÕÊºÅID',
+  `std_name` varchar(100) DEFAULT NULL COMMENT 'Ñ§ÉúĞÕÃû',
+  `address` varchar(200) DEFAULT NULL COMMENT '¾ßÌåµØÖ·',
+  `contact_phone` varchar(20) DEFAULT NULL COMMENT 'ÁªÏµµç»°',
+  `contact_mobile` varchar(11) DEFAULT NULL COMMENT 'ÊÖ»ú',
+  `status` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
+  `enrollment_date` datetime DEFAULT NULL COMMENT 'ÈëÑ§Ê±¼ä',
+  `birthday` datetime DEFAULT NULL COMMENT 'ÓÃÀ´¼ÆËãÑ§ÉúÄêÁä',
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='å­¦ç”Ÿä¿¡æ¯è¡¨';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Ñ§ÉúĞÅÏ¢±í';
 
 -- ----------------------------
 --  Table structure for `sms_teacher`
@@ -160,19 +160,19 @@ CREATE TABLE `sms_student` (
 DROP TABLE IF EXISTS `sms_teacher`;
 CREATE TABLE `sms_teacher` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL COMMENT 'ä¸»å¸å·ID',
-  `tch_name` varchar(100) DEFAULT NULL COMMENT 'æ•™å¸ˆå§“å',
-  `address` varchar(200) DEFAULT NULL COMMENT 'å…·ä½“åœ°å€',
-  `contact_phone` varchar(20) DEFAULT NULL COMMENT 'è”ç³»ç”µè¯',
-  `contact_mobile` varchar(11) DEFAULT NULL COMMENT 'æ‰‹æœº',
-  `status` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
-  `employ_date` datetime DEFAULT NULL COMMENT 'å…¥èŒæ—¶é—´ï¼Œç”¨æ¥è®¡ç®—æ•™å¸ˆçš„æ•™é¾„',
+  `user_id` bigint(20) NOT NULL COMMENT 'Ö÷ÕÊºÅID',
+  `tch_name` varchar(100) DEFAULT NULL COMMENT '½ÌÊ¦ĞÕÃû',
+  `address` varchar(200) DEFAULT NULL COMMENT '¾ßÌåµØÖ·',
+  `contact_phone` varchar(20) DEFAULT NULL COMMENT 'ÁªÏµµç»°',
+  `contact_mobile` varchar(11) DEFAULT NULL COMMENT 'ÊÖ»ú',
+  `status` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
+  `employ_date` datetime DEFAULT NULL COMMENT 'ÈëÖ°Ê±¼ä£¬ÓÃÀ´¼ÆËã½ÌÊ¦µÄ½ÌÁä',
   `birthday` datetime DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='æ•™å¸ˆä¿¡æ¯è¡¨';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='½ÌÊ¦ĞÅÏ¢±í';
 
 -- ----------------------------
 --  Table structure for `sms_user`
@@ -180,21 +180,21 @@ CREATE TABLE `sms_teacher` (
 DROP TABLE IF EXISTS `sms_user`;
 CREATE TABLE `sms_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `account` varchar(50) DEFAULT NULL COMMENT 'ç”¨æˆ·ç™»å½•å¸å·ï¼šé»˜è®¤æ ¹æ®xx_code',
-  `password` varchar(64) DEFAULT NULL COMMENT 'é»˜è®¤å¯†ç ï¼šå­¦å·å6çš„md5ç ',
-  `user_name` varchar(50) DEFAULT NULL COMMENT 'åç§°ï¼šç”¨æˆ·çœŸå®å§“å',
-  `role_id` int(11) DEFAULT '0' COMMENT '1å­¦ç”Ÿ 2æ•™å¸ˆ 3è¡Œæ”¿äººå‘˜ 100ç®¡ç†å‘˜',
-  `role_attribute` bigint(20) DEFAULT '0' COMMENT 'è§’è‰²æƒé™å±æ€§ï¼Œæ ‡è®°ï¼ŒæŒ‰ä½ä¸ï¼Œæ¯ä¸€ä½ä»£è¡¨ä¸€ç§æƒé™',
+  `account` varchar(50) DEFAULT NULL COMMENT 'ÓÃ»§µÇÂ¼ÕÊºÅ£ºÄ¬ÈÏ¸ù¾İxx_code',
+  `password` varchar(64) DEFAULT NULL COMMENT 'Ä¬ÈÏÃÜÂë£ºÑ§ºÅºó6µÄmd5Âë',
+  `user_name` varchar(50) DEFAULT NULL COMMENT 'Ãû³Æ£ºÓÃ»§ÕæÊµĞÕÃû',
+  `role_id` int(11) DEFAULT '0' COMMENT '1Ñ§Éú 2½ÌÊ¦ 3ĞĞÕşÈËÔ± 100¹ÜÀíÔ±',
+  `role_attribute` bigint(20) DEFAULT '0' COMMENT '½ÇÉ«È¨ÏŞÊôĞÔ£¬±ê¼Ç£¬°´Î»Óë£¬Ã¿Ò»Î»´ú±íÒ»ÖÖÈ¨ÏŞ',
   `ip` varchar(24) DEFAULT NULL COMMENT 'ip',
   `last_ip` varchar(24) DEFAULT NULL COMMENT 'ip',
-  `status` tinyint(3) DEFAULT '0' COMMENT 'ç”¨æˆ·çŠ¶æ€ï¼Œ0é»˜è®¤æœ‰æ•ˆï¼Œ-1åˆ é™¤ï¼Œ1å¾…æ¿€æ´» 9å¾…å®¡æ ¸',
-  `active_type` tinyint(3) DEFAULT '0' COMMENT 'æ¿€æ´»çŠ¶æ€:0æœªæ¿€æ´»ï¼Œ1å·²æ¿€æ´»',
-  `active_time` datetime DEFAULT NULL COMMENT 'å¸å·æ¿€æ´»æ—¶é—´',
-  `last_time` datetime DEFAULT NULL COMMENT 'æœ€åç™»å½•æ—¶é—´',
+  `status` tinyint(3) DEFAULT '0' COMMENT 'ÓÃ»§×´Ì¬£¬0Ä¬ÈÏÓĞĞ§£¬-1É¾³ı£¬1´ı¼¤»î 9´ıÉóºË',
+  `active_type` tinyint(3) DEFAULT '0' COMMENT '¼¤»î×´Ì¬:0Î´¼¤»î£¬1ÒÑ¼¤»î',
+  `active_time` datetime DEFAULT NULL COMMENT 'ÕÊºÅ¼¤»îÊ±¼ä',
+  `last_time` datetime DEFAULT NULL COMMENT '×îºóµÇÂ¼Ê±¼ä',
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='ç”¨æˆ·å¸å·è¡¨';
+) ENGINE=MyISAM AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='ÓÃ»§ÕÊºÅ±í';
 
 -- ----------------------------
 --  Table structure for `std_examination`
@@ -202,16 +202,16 @@ CREATE TABLE `sms_user` (
 DROP TABLE IF EXISTS `std_examination`;
 CREATE TABLE `std_examination` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `school_id` bigint(20) DEFAULT '0' COMMENT 'è€ƒè¯•å­¦æ ¡id',
-  `grade_id` bigint(20) DEFAULT '0' COMMENT 'å¹´çº§',
-  `examination_type` varchar(80) DEFAULT NULL COMMENT 'è€ƒè¯•ç±»å‹',
-  `Examination_name` varchar(200) DEFAULT NULL COMMENT 'è€ƒè¯•åç§°',
-  `initiate_agency` varchar(80) DEFAULT NULL COMMENT 'å‘èµ·è€…',
+  `school_id` bigint(20) DEFAULT '0' COMMENT '¿¼ÊÔÑ§Ğ£id',
+  `grade_id` bigint(20) DEFAULT '0' COMMENT 'Äê¼¶',
+  `examination_type` varchar(80) DEFAULT NULL COMMENT '¿¼ÊÔÀàĞÍ',
+  `Examination_name` varchar(200) DEFAULT NULL COMMENT '¿¼ÊÔÃû³Æ',
+  `initiate_agency` varchar(80) DEFAULT NULL COMMENT '·¢ÆğÕß',
   `examination_date` datetime DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37136 DEFAULT CHARSET=utf8 COMMENT='å­¦ç”Ÿè€ƒè¯•ä¿¡æ¯è¡¨';
+) ENGINE=MyISAM AUTO_INCREMENT=37136 DEFAULT CHARSET=utf8 COMMENT='Ñ§Éú¿¼ÊÔĞÅÏ¢±í';
 
 -- ----------------------------
 --  Table structure for `std_extra_exam`
@@ -235,17 +235,17 @@ CREATE TABLE `std_extra_exam` (
 DROP TABLE IF EXISTS `std_property`;
 CREATE TABLE `std_property` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `std_id` bigint(20) NOT NULL COMMENT 'ä¸»å¸å·ID',
-  `std_code` int(11) DEFAULT '0' COMMENT 'å­¦å·',
-  `grade_id` bigint(20) DEFAULT '0' COMMENT 'å¹´çº§',
-  `class_id` bigint(20) DEFAULT NULL COMMENT 'ç­çº§',
-  `school_id` bigint(20) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
-  `school_code` varchar(20) DEFAULT NULL COMMENT 'å­¦æ ¡ç¼–ç ï¼Œå‰4ä½ä»£è¡¨åŒºåŸŸ',
-  `agency_type` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
+  `std_id` bigint(20) NOT NULL COMMENT 'Ö÷ÕÊºÅID',
+  `std_code` int(11) DEFAULT '0' COMMENT 'Ñ§ºÅ',
+  `grade_id` bigint(20) DEFAULT '0' COMMENT 'Äê¼¶',
+  `class_id` bigint(20) DEFAULT NULL COMMENT '°à¼¶',
+  `school_id` bigint(20) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
+  `school_code` varchar(20) DEFAULT NULL COMMENT 'Ñ§Ğ£±àÂë£¬Ç°4Î»´ú±íÇøÓò',
+  `agency_type` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='å­¦ç”Ÿä¿¡æ¯å˜æ›´è¡¨';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Ñ§ÉúĞÅÏ¢±ä¸ü±í';
 
 -- ----------------------------
 --  Table structure for `std_sorce`
@@ -253,28 +253,28 @@ CREATE TABLE `std_property` (
 DROP TABLE IF EXISTS `std_sorce`;
 CREATE TABLE `std_sorce` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `std_id` bigint(20) NOT NULL COMMENT 'å­¦ç”Ÿid',
-  `exam_id` bigint(20) NOT NULL COMMENT 'è€ƒè¯•id',
-  `chinese` varchar(20) DEFAULT '0' COMMENT 'æˆç»©',
-  `math` varchar(20) DEFAULT '0' COMMENT 'æˆç»©',
-  `english` varchar(20) DEFAULT '0' COMMENT 'æˆç»©',
-  `chemistry` varchar(20) DEFAULT '0' COMMENT 'åŒ–å­¦',
-  `physical` varchar(20) DEFAULT '0' COMMENT 'ç‰©ç†',
-  `biological` varchar(20) DEFAULT '0' COMMENT 'ç”Ÿç‰©',
-  `science` varchar(20) DEFAULT '0' COMMENT 'ç§‘å­¦',
-  `society` varchar(20) DEFAULT '0' COMMENT 'ç¤¾ä¼š',
-  `political` varchar(20) DEFAULT '0' COMMENT 'æ”¿æ²»',
-  `history` varchar(20) DEFAULT '0' COMMENT 'å†å²',
-  `geography` varchar(20) DEFAULT '0' COMMENT 'åœ°ç†',
+  `std_id` bigint(20) NOT NULL COMMENT 'Ñ§Éúid',
+  `exam_id` bigint(20) NOT NULL COMMENT '¿¼ÊÔid',
+  `chinese` varchar(20) DEFAULT '0' COMMENT '³É¼¨',
+  `math` varchar(20) DEFAULT '0' COMMENT '³É¼¨',
+  `english` varchar(20) DEFAULT '0' COMMENT '³É¼¨',
+  `chemistry` varchar(20) DEFAULT '0' COMMENT '»¯Ñ§',
+  `physical` varchar(20) DEFAULT '0' COMMENT 'ÎïÀí',
+  `biological` varchar(20) DEFAULT '0' COMMENT 'ÉúÎï',
+  `science` varchar(20) DEFAULT '0' COMMENT '¿ÆÑ§',
+  `society` varchar(20) DEFAULT '0' COMMENT 'Éç»á',
+  `political` varchar(20) DEFAULT '0' COMMENT 'ÕşÖÎ',
+  `history` varchar(20) DEFAULT '0' COMMENT 'ÀúÊ·',
+  `geography` varchar(20) DEFAULT '0' COMMENT 'µØÀí',
   `wenzong` varchar(20) DEFAULT NULL,
   `lizong` varchar(20) DEFAULT NULL,
-  `total_sorce` varchar(20) DEFAULT '0' COMMENT 'æˆç»©',
-  `check_status` tinyint(4) DEFAULT '0' COMMENT 'ç™»è®°çŠ¶ä½“',
+  `total_sorce` varchar(20) DEFAULT '0' COMMENT '³É¼¨',
+  `check_status` tinyint(4) DEFAULT '0' COMMENT 'µÇ¼Ç×´Ìå',
   `check_time` datetime DEFAULT NULL,
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37138 DEFAULT CHARSET=utf8 COMMENT='å­¦ç”Ÿæˆç»©è¡¨';
+) ENGINE=MyISAM AUTO_INCREMENT=37138 DEFAULT CHARSET=utf8 COMMENT='Ñ§Éú³É¼¨±í';
 
 -- ----------------------------
 --  Table structure for `tch_property`
@@ -282,19 +282,19 @@ CREATE TABLE `std_sorce` (
 DROP TABLE IF EXISTS `tch_property`;
 CREATE TABLE `tch_property` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `tch_id` bigint(20) NOT NULL COMMENT 'ä¸»å¸å·ID',
-  `tch_code` varchar(20) DEFAULT '0' COMMENT 'æ•™å¸ˆç¼–ç ',
-  `grade_id` bigint(20) DEFAULT '0' COMMENT 'å¹´çº§',
-  `class_id` bigint(20) DEFAULT NULL COMMENT 'ç­çº§',
-  `school_id` bigint(20) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
-  `school_code` varchar(20) DEFAULT NULL COMMENT 'å­¦æ ¡ç¼–ç ï¼Œå‰4ä½ä»£è¡¨åŒºåŸŸ',
-  `agency_type` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
-  `position` varchar(20) DEFAULT NULL COMMENT 'èŒåŠ¡',
-  `status` tinyint(4) DEFAULT '0' COMMENT 'è®¢å•çŠ¶æ€ ï¼Œ0 é»˜è®¤æœ‰æ•ˆ 1å¾…å®¡æ ¸ -1 å¤±æ•ˆ',
+  `tch_id` bigint(20) NOT NULL COMMENT 'Ö÷ÕÊºÅID',
+  `tch_code` varchar(20) DEFAULT '0' COMMENT '½ÌÊ¦±àÂë',
+  `grade_id` bigint(20) DEFAULT '0' COMMENT 'Äê¼¶',
+  `class_id` bigint(20) DEFAULT NULL COMMENT '°à¼¶',
+  `school_id` bigint(20) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
+  `school_code` varchar(20) DEFAULT NULL COMMENT 'Ñ§Ğ£±àÂë£¬Ç°4Î»´ú±íÇøÓò',
+  `agency_type` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
+  `position` varchar(20) DEFAULT NULL COMMENT 'Ö°Îñ',
+  `status` tinyint(4) DEFAULT '0' COMMENT '¶©µ¥×´Ì¬ £¬0 Ä¬ÈÏÓĞĞ§ 1´ıÉóºË -1 Ê§Ğ§',
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='æ•™å¸ˆä¿¡æ¯å˜æ›´è¡¨';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='½ÌÊ¦ĞÅÏ¢±ä¸ü±í';
 
 -- ----------------------------
 --  View structure for `students_score`

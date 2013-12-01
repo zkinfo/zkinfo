@@ -1,0 +1,100 @@
+/**********************************************************
+ *  Name: ----·样式布局
+ *  Version : 0.0.1
+ *  Date: 2012-2-16
+ *  Author: danchex@gmail.com
+ **********************************************************/
+/* layout */
+#topBar, #navBar, #main, #footer {width:960px; margin:0 auto;}
+.clear {clear:both;}
+/*Header*/
+#header {}
+	#top {height:90px; width:100%; background:#F0F0F0 }
+		#topBar {}
+			#logo a {float:left; width:270px; height:90px; background:url(../images/logo.gif);}
+				#logo h1 {display:none;}
+			#topInfo {float:right; margin-top:10px;}
+	#navBar {margin-top:10px;}
+		#mainNav {height:38px; background:url(../images/mainNavBg.gif);}
+			#mainNav .menu ul li {float:left; width:100px; padding-top:5px; text-align:center;}
+			#mainNav .menu ul li a {color:white; line-height:33px; font-weight:bold; font-size:14px;}
+			#mainNav .menu ul li.act {background:url(../images/mainNavAct.gif);}
+			#mainNav .menu ul li.act a {color:black;}
+			#tools a {float:right; width:116px; height:27px; margin:5px; background:url(../images/tools.gif) no-repeat;}
+			#tools a:hover {float:right; width:116px; height:27px; margin:5px; background:url(../images/toolsOver.gif) no-repeat;}
+			#tools h4 {display:none;}
+		#subNav {height:36px; background:url(../images/subNavBg.gif);}
+			#subNav .menu ul li {float:left; width:100px; text-align:center;}
+			#subNav .menu ul li a {color:#666; line-height:36px; font-size:12px;}
+			#subNav .menu ul li.act {}
+			#subNav .menu ul li.act a {background:#fff; border:1px solid #ddd; padding:6px 12px;}
+
+/*Main*/
+#main {margin-top:15px;}
+	#appBar {float:left; width:190px; height:300px; border:1px solid #999;}
+		#myApp .title {height:36px; line-height:36px; padding:0 0 0 10px; background:url(../images/myAppBg.gif); border-bottom:1px solid #999;}
+			#myApp .title h3 {float:left; font-size:14px; font-weight:bold; color:#666}
+			#appSet a {float:right; width:16px; height:16px; margin:10px; background:url(../images/setting.gif) no-repeat center center;}
+			#appSet h4 {display:none;}
+		#myApp .list {height:156px; border-bottom:1px dashed #CCC;}
+			#myApp .list ul li {height:38px; line-height:38px; padding-left:30px; color:#666;}
+			#myApp .list ul li a {font-size:14px;}
+		#newApp .title {height:36px; line-height:36px; margin:0 10px; background:url(../images/myAppBg.gif); border-bottom:1px solid #ccc;}
+		#newApp .title h3 {float:left; color:#666;}
+		#newApp .title .more {float:right;}
+		#newApp .list {margin:10px;}
+		#newApp .list .logo {float:left; height:30px; width:30px; background:#999;}
+		#newApp .list .info {float:right; height:50px; width:130px; overflow:hidden;}
+			#newApp .list .info .title {height:22px; line-height:22px; border:none; margin:0;}
+			#newApp .list .info .title h4 {float:left; font-size:14px; color:#999;}
+			#newApp .list .info .title .appAdd a {float:right; width:33px; height:18px; background:url(../images/appAdd.gif) no-repeat;}
+			#newApp .list .info .title .appAdd h4 {display:none;}
+			#newApp .list .info .text {float:left; color:#bbb;}
+
+	#noteBar {float:right; width:210px; min-height:250px; border:1px solid #999;}
+		#noteBar .title {height:36px; line-height:36px; padding:0 0 0 15px; background:url(../images/myAppBg.gif);}
+		#noteBar .title h4 {font-size:14px; font-weight:bold;}
+		#noteBar .list ul li {padding:6px 15px; height:24px; font-size:12px;}
+
+	#mainArea {float:left; width:534px; margin:0 10px;}
+		#mainArea .iconSet {width:480px; margin:0 auto;}
+		#mainArea .iconSet ul li {float:left; width:60px; margin:30px; display:inline;}
+		#mainArea .iconSet ul li .icon {width:60px; height:60px; background:#999;}
+		#mainArea .iconSet ul li img {width:60px; height:60px;}
+		#mainArea .iconSet ul li .iconName {height:28px; line-height:28px; font-size:14px; font-weight:bold;}
+
+	#contentArea {float:left; width:736px; margin:0 10px 0 0;}
+		#contentArea .title h3 {height:33px; line-height:33px; padding-left:10px; margin-top:5px; font-size:18px; font-weight:bold; border-bottom:2px solid #ccc;}
+		.searchBar {padding:15px 5px; color:#666; height:100px; border-bottom:1px solid #ccc;}
+		.searchInput {float:left; padding:5px; width:610px; height:90px;}
+		.searchInput table tr td {text-align:right; padding:5px 0; width:100px; width:100px; font-size:13px; font-weight:bold;}
+		.searchInput table tr td input {padding:5px 5px; width:100px; color:#333; font-size:14px; font-weight:bold; border:1px solid #ccc;}
+		.searchSubmit {float:right; padding:5px; width:90px; height:90px; border-left:1px dashed #ccc;}
+		.searchSubmit input {margin:26px 23px; width:50px; height:25px; text-align:center;
+								font-weight:bold; font-size:13px; color:#C77405; background:#FDF9E1; border:1px solid #FBCB09;}
+		.listArea {width:100%;}
+			.listTab {width:736px; height:33px; background:url(../images/listTabBg.gif) repeat-x;}
+			.listTab ul li {float:left; margin-left:5px; padding-top:5px; height:28px; line-height:28px;}
+			.listTab ul li a {background:#FFF; padding:5px 7px; font-weight:bold; height:28px; line-height:28px;}
+			.listTab ul li.act a {background:#FFF; color:#5485D3; font-weight:bold; padding:6px 8px; height:28px; line-height:28px; border:1px solid #FFF;}
+			.listTable {margin-top:5px;}
+			.listTable table {width:100%; border-collapse:collapse; border:1px solid #ccc;}
+			.listTable td {height:38px; font-family:'宋体'}
+			.listTable thead {width:736px; height:33px; background:url(../images/listTabBg.gif) repeat-x;}
+			.listTable thead tr th {background:#5485D3; font-weight:bold; border-top:5px solid #5485d3;}
+			.listTable thead tr th a {background:#FFF; padding:7px; font-weight:bold;}
+			.listTable thead tr th.act {background:#5485D3; font-weight:bold; border-top:5px solid #5485d3;}
+			.listTable thead tr th.act a {background:#FFF; color:#5485D3; padding:10px; font-weight:bold;}
+			.listTable table tr.double {background:#F1F1F1;}
+			.listTable table tr.act {background:#66CCFF;}
+			.listTable table tr:hover {background:#66CCFF;}
+			.listTable table tr td {padding:5px;}
+			.listTable table tr td a {color:#005BFB;}
+
+			.listPage {text-align:right; margin:5px 0; padding:5px 0;}
+			.listPage a {margin:0 5px; padding:3px 5px; color:#09f;}
+/*Footer*/
+#footer {margin:30px auto; padding:10px 0; border-top:1px solid #999;}
+	#footBar {margin:0 auto; text-align:center;}
+	#footBar a {color:#09f;}
+/* layout over */

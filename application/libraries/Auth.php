@@ -34,7 +34,9 @@ class Auth
 		$islogin = 0;
 
 		$identity = 'account';
+		//var_dump($this->ci->session->all_userdata());
 		$islogin = (bool) $this->ci->session->userdata($identity);
+		//var_dump($islogin);die('111');
 
 		if($this->ci->session->userdata($identity)) {
 			$islogin = 1;
@@ -44,7 +46,7 @@ class Auth
 		return $islogin;
 	}
 
-	function login($account,$password,$remember="")
+	/*function login($account,$password,$remember="")
 	{
 		$this->ci->load->business("partner/partner_biz");
 		$this->ci->load->business("user/consumer_biz");
@@ -214,10 +216,12 @@ class Auth
 		//$this->ci->session = new CI_Session(array('sess_expiration' => $expi)); //原生对象可以支持构造参数
 		//$this->ci->load->library('session',array('sess_expiration' => 123400));  //Loader 不能很好支持构造参数
 		$this->ci->session->set_userdata($session_data); //var_dump($this->ci->session); die;
+		$this->ci->load->library('logger');
+		$this->login_Log();
 	}
 
 	// 添加登录log
-	/*public function login_Log(){
+	public function login_Log(){
 		$this->ci->load->library('logger');
 		$data = array();
 		$data["date"] = date("Y-m-d H:i:s");
@@ -229,7 +233,7 @@ class Auth
 	}*/
 
 	//字符串解密加密
-	/*private function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
+/*	private function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 
 		$ckey_length = 4;	// 随机密钥长度 取值 0-32;
 					// 加入随机密钥，可以令密文无任何规律，即便是原文和密钥完全相同，加密结果也会每次不同，增大破解难度。

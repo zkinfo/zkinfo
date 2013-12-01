@@ -1,0 +1,15 @@
+﻿布局文件夹 注释：
+
+示例：
+./layouts
+	www    www.500mi.com   的布局
+	work   work.500mi.com  的布局
+	boss   boss.500mi.com  的布局
+	shop   shop.500mi.com  的布局
+
+./views
+	公共视图，如控件之类。
+	普通控制器视图，已经放在modules/tpl下面了。
+
+./controls
+	控件视图模板

@@ -1,0 +1,17 @@
+/**********************************************************
+ *  Name: 五百米·样式主文件
+ *  Version : 0.0.1
+ *  Date: 2012-2-16
+ *  Author: danchex@gmail.com
+ **********************************************************/
+/* public */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td {padding:0; margin:0;}
+body {color:#000; font:12px "宋体",serif;}
+address,caption,cite,code,dfn,em,th,var {font-weight:normal; font-style:normal;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal; font-size:100%;}
+img {border:0;}
+ul,li {list-style:none;}
+a:link,
+a:visited {color:#666; text-decoration:none;}
+a:hover {color:#09F; text-decoration:underline;}
+/* public */

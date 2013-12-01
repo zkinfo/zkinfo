@@ -49,7 +49,7 @@ class MY_Model extends CI_Model
 	 */
 	public function insert_batch($data)
 	{
-		return $bool = $this->db->insert_batch($this->table_name, $data);
+		return $this->db->insert_batch($this->table_name, $data);
 	}
 
 	/**
@@ -67,7 +67,7 @@ class MY_Model extends CI_Model
 		} else {
 			$this->db->where('id', $id);
 		}
-		return $bool = $this->db->update($this->table_name, $data);
+		return $this->db->update($this->table_name, $data);
 	}
 
 	/**
@@ -82,7 +82,7 @@ class MY_Model extends CI_Model
 		$data = array(
 			'status' => '-1'
 		);
-		return $bool = $this->update($data, $id);
+		return $this->update($data, $id);
 	}
 
 	/**
@@ -98,7 +98,7 @@ class MY_Model extends CI_Model
 		// 	$params['status <>'] = '-1';
 		// }
 		$q = $this->db->select($fields, false)->where($params)->get($this->table_name);
-		return $row = $q->row_array();
+		return $q->row_array();
 	}
 
 	/**
@@ -113,7 +113,7 @@ class MY_Model extends CI_Model
 		if ( ! isset($params['status'])) {
 			$params['status <>'] = '-1';
 		}
-		return $count = $this->db->where($params)->or_like($like)->from($this->table_name)
+		return $this->db->where($params)->or_like($like)->from($this->table_name)
 								 ->count_all_results();
 	}
 
@@ -123,7 +123,7 @@ class MY_Model extends CI_Model
 	 * @param 	array 	$params
 	 * @param 	string 	$data
 	 * @param 	int 	$start
-	 * @param 	int 	$perpage
+	 * @param 	int 	$pagesize
 	 * @param 	string 	$order
 	 * @param 	string 	$sort
 	 * @param 	array 	$like
@@ -144,7 +144,7 @@ class MY_Model extends CI_Model
 			$this->db->order_by($order_by, '');
 		}
 		$q = $this->db->select($fields, false)->where($params)->get($this->table_name);
-		return $list = $q->result_array();
+		return $q->result_array();
 	}
 }
 

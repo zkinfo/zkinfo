@@ -1,0 +1,284 @@
+/**********************************************************
+ *  Name: 样式主文件
+ *  Version : 0.0.1
+ *  Create: danchex@gmail.com
+ *  Date: 2012-2-16
+
+ *  Modify: yourname@your.com
+ *  Date: Y-m-d H:i:s
+ *  Log: What is changed ?
+ **********************************************************/
+/* public */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td {padding:0; margin:0;}
+body {color:#000; font:12px "宋体",serif;}
+address,caption,cite,code,dfn,em,th,var {font-weight:normal; font-style:normal;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal; font-size:100%;}
+img {border:0;}
+ul,li {list-style:none;}
+a:link,
+a:visited {color:#666; text-decoration:none;}
+a:hover {color:#09F; text-decoration:underline;}
+
+a.invert:link,
+a.invert:visited {color:#09F; text-decoration:none;}
+a.invert:hover {color:#666; text-decoration:underline;}
+
+a.whiteLink:link,
+a.whiteLink:visited {color:#FFF; text-decoration:none;}
+a.whiteLink:hover {color:#09F; text-decoration:underline;}
+
+/* public */
+input, select, textarea
+{
+	padding:0.5em;
+}
+.submit, .reset
+{
+	border:1px solid #fc0;
+	color:#c63;
+	background:#ffc;
+	font-weight:bold;
+	cursor:pointer;
+	padding:0.5em;
+	-moz-border-radius: 3px;
+　　border-radius: 3px;
+}
+.submit .continue, a.submit:link, a.submit:visited, .reset
+{
+	color:#09f;
+	text-decoration:none;
+}
+
+.xinYezhu a:link , .xinYezhu a:visited {color:white;}
+/* layout */
+.topBar, .navBar, #content, #footer {width:960px; margin:0 auto;}
+.clear {clear:both;}
+/*Header*/
+#header {}
+	.top {height:90px; width:100%; background:#F0F0F0;}
+		.topBar {}
+			#header .logo a {float:left; width:270px; height:90px; background:url(../images/logo.gif);}
+				.logo h1 {display:none;}
+			.topInfo {float:right; margin-top:10px;}
+	.navBar {margin-top:10px;}
+		.mainNav {height:38px; background:url(../images/mainNavBg.gif);
+			-moz-border-radius: 5px 5px  0 0 ;
+　　		border-radius: 5px 5px  0 0 ;
+		}
+			.mainNav li {float:left; width:100px; padding-top:5px; text-align:center;}
+			.mainNav li a,
+			.mainNav li a:visited {color:white; line-height:33px; font-weight:bold; font-size:14px;}
+			.mainNav li.act {background:url(../images/mainNavAct.gif);}
+			.mainNav li.act a,
+			.mainNav li.act a:visited {color:black;}
+			.tools a {float:right; width:116px; height:27px; margin:5px; background:url(../images/tools.gif) no-repeat;}
+			.tools a:hover {float:right; width:116px; height:27px; margin:5px; background:url(../images/toolsOver.gif) no-repeat;}
+			.tools h4 {display:none;}
+		.subNav {width:958px; height:36px; background:url(../images/subNavBg.gif); border:1px solid #eee; border-top:none;}
+			.subNav li {float:left; line-height:36px; text-align:center; padding:0 12px;}
+			.subNav li a,
+			.subNav li a:visited {color:#666; padding:5px 7px; font-size:12px;}
+			.subNav li a:hover {color:#09F;}
+			.subNav li.act a,
+			.subNav li.act a:visited {background:#FFF; padding:5px 7px; border:1px solid #ddd;}
+
+/*Content*/
+#content {margin-top:5px;}
+	.app {float:left; width:190px; margin:0; overflow:hidden;}
+	.appBar {width:99%; border:1px solid #999; margin-bottom:10px;}
+		.myApp .title {height:36px; line-height:36px; padding:0 0 0 10px; background:url(../images/myAppBg.gif); border-bottom:1px solid #999;}
+			.myApp .title h3 {float:left; font-size:14px; font-weight:bold; color:#666;}
+			.appSet a {float:right; width:16px; height:16px; margin:10px; background:url(../images/setting.gif) no-repeat center center;}
+			.appSet h4 {display:none;}
+		.myApp .list {border-bottom:0px dashed #CCC;}
+			.myApp li {height:38px; line-height:38px; padding-left:30px; color:#666;}
+			.myApp li a {font-size:14px;}
+		.newApp {}
+		.newApp .title {height:36px; line-height:36px; margin:0 10px; background:url(../images/myAppBg.gif); border-bottom:1px solid #ccc;}
+		.newApp .title h3 {float:left; color:#666;}
+		.newApp .more {float:right;}
+		.newApp .more a {color:#09F;}
+		.newApp .list {margin:10px;}
+		.newApp .list .oneApp {height:50px; margin-bottom:5px;}
+		.newApp .logo {float:left; height:30px; width:30px; background:#999;}
+		.newApp .info {float:right; height:50px; width:130px; overflow:hidden;}
+			.newApp .info .title {margin-top:3px; height:22px; line-height:22px; border:none; margin:0;}
+			.newApp .info .title h4 {float:left; font-size:14px; color:#005BFB;}
+			.newApp .info .title .appAdd a {float:right; width:33px; height:18px; background:url(../images/appAdd.gif) no-repeat;}
+			.newApp .info .title .appAdd h4 {display:none;}
+			.newApp .info .text {float:left; color:#bbb;}
+
+	.sideBar {float:right; width:210px; margin:0; overflow:hidden;}
+		.noteBar {width:99%; border:1px solid #999; margin-bottom:10px;}
+		.noteBar .title {height:36px; line-height:36px; padding:0 0 0 15px; background:url(../images/myAppBg.gif);}
+		.noteBar .title h4 {font-size:14px; font-weight:bold;}
+		.noteBar li {padding:4px 12px; font-size:12px;}
+
+	.mainArea {float:left; width:550px; margin:5px;}
+		.mainArea .iconSet {width:480px; margin:0 auto;}
+		.mainArea  li {float:left; width:60px; margin:30px; display:inline; text-align:center;}
+		.mainArea  li .icon {width:60px; height:60px; background:#999;}
+		.mainArea  li img {width:60px; height:60px;}
+		.mainArea  li .iconName {height:28px; line-height:28px; width:60px; font-size:14px; font-weight:bold;}
+
+	.contentArea {float:right; width:765px;}
+		.contentArea .subNav {border-top:1px solid #eee;}
+		.contentArea .title {height:33px; width:100%; margin-top:10px; border-bottom:2px solid #ccc;}
+		.contentArea .title h3 {height:33px; width:100%; line-height:33px; padding-left:10px; display:inline; margin-top:5px; font-size:18px; font-weight:bold;}
+		.contentArea a.subTitle,
+		.contentArea a.subTitle:visited {font-size:12px; margin-left:12px; color:#005BFB; font-weight:normal;}
+		.searchBar {width:100%; color:#666; height:100px; border-bottom:1px solid #ccc;}
+		.searchInput {float:left; width:84%; height:90px; padding:5px 0;}
+		.searchInput table {width:90%;}
+		.searchInput td {text-align:center; width:14%; padding-top:5px; padding-bottom:5px; font-size:13px; font-weight:bold;}
+		.searchInput td input {color:#333; widdth:98%; padding-top:3px; padding-bottom:3px; font-size:14px; font-weight:bold; border:1px solid #ccc;}
+		.searchSubmit {float:right; width:15%; text-align:center; height:90px; padding:5px 0; border-left:1px dashed #ccc;}
+		.searchSubmit input {cursor:pointer; margin-top:30px; background:url(../images/searchButton.gif) no-repeat; width:52px; height:26px; border:0;}
+
+		.listArea {width:100%;}
+			.listTab {width:auto; height:33px; background:url(../images/listTabBg.gif) repeat-x;}
+			.listTab li {float:left; margin-left:5px; padding-top:5px; height:28px; line-height:28px;}
+			.listTab li a:link,
+			.listTab li a:visited {background:#FFF; color:#999; padding:5px 7px; font-weight:bold; height:28px; line-height:28px;}
+			.listTab li a:hover {color:#09F;}
+			.listTab li.act a:link,
+			.listTab li.act a:visited {background:#FFF; color:#09F; font-weight:bold; padding:6px 8px; height:28px; line-height:28px; border:1px solid #FFF;}
+			.listTab li a:hover {color:#09F;}
+
+			.listTable {margin-left:10px; margin-top:10px; margin-bottom:30px; font-size:12px;}
+			.listTable table {border-collapse:collapse; width:100%; border:1px solid #ccc; margin-bottom:5px;}
+tr.thead , th {background:#ECECEC; padding:0 3px; border:0px solid red; vertical-align: middle;}
+tr.thead a,
+tr.thead a:visited,
+th a,
+th a:visited {font-weight:bold; background:#CCC; color:#000; height:33px; line-height:33px;}
+			.listTable tr {height:33px;}
+			.listTable tr.title td {}
+			.listTable tr.double {background:#F1F1F1;}
+			.listTable tr.act {background:#66CCFF;}
+			.listTable tr:hover {background:#66CCFF;}
+			.listTable td {padding:0 3px; font-family:'宋体'; border-left:1px solid #eee; border-right:1px solid #eee;}
+			.listTable td a:link,
+			.listTable td a:visited {color:#005BFB;}
+			.listTable .listCard {}
+			.listTable .listCard tr:hover {background:#fff;}
+			.listTable .listCard td {padding:5px 10px;}
+			.listTable .listShort {width:auto;}
+			.listTable h2 {font-size:14px; margin:5px 0; font-weight:bold;}
+
+			.inputTable {margin-left:10px; margin-top:10px; font-size:14px; color:#666;}
+			.inputTable td {height:25px; line-height:25px; padding:5px;}
+			.inputTable input, .inputTable select {padding:4px 5px; font-size:13px;}
+input, select {padding:4px 5px; margin-right:3px; font-size:13px;}
+			.mustInput {color:red; padding:5px;}
+
+			.inputTable .icon li {float:left; width:72px; height:29px; line-height:29px; text-align:center; background:url(../images/checkAll.gif) no-repeat; margin-right:5px;}
+			.inputTable .icon a {width:72px; height:29px; display:block; line-height:29px; text-align:center; background:url(../images/checkAll.gif) no-repeat; border:none; padding:0; margin:0; cursor:pointer;}
+			.inputTable .icon a span {display:none;}
+			.inputTable .icon li ul {position:absolute; z-index:9; width:72px; display:none;}
+
+			.pageactions {width:auto; margin:5px 0; text-align:right;}
+			.pages a, .pages strong {padding:3px 5px; margin:0 5px;}
+/*Footer*/
+#footer {margin:0px auto; padding:10px 0; border-top:1px solid #999;}
+	.footBar {margin:0 auto; text-align:center;}
+	.footBar a:link,
+	.footBar a:visited {color:#09f;}
+	.footBar a:hover {text-decoration:underline;}
+/* layout over */
+
+.main .sideBar {display:none;}
+
+.region {width:300px; border:1px solid #eee;}
+.region li {float:left; width:50px; cursor:pointer; color:#09f;}
+
+.h-b-u-r li {float:left; color:white; font-size:28px; line-height:42px; font-family:arial black; width:100px; text-align:center; margin:10px 10px 10px 0px; background:#09f;}
+.h-b-u-r .subBUR {font-size:22px; padding:0; top:0;}
+.partner_area li {float:left; color:white; font-size:28px; line-height:42px; font-family:arial black; font-size:22px;
+    padding:0; top:0; text-align:center; margin:10px 10px 10px 0px; background:#09f; padding:10px; margin:10px;}
+
+
+/**********************************************************
+ *  Name: 五百米·主题文件
+ *  Version : 0.0.1
+ *  Date: 2012-2-17
+ *  Author: danchex@gmail.com
+ **********************************************************/
+/* Theme: theme_theme */
+.theme_theme .sideBar {float:right; width:765px;}
+	.theme_theme .noteBar {float:right; width:30%; height:250px; border:1px solid #999; margin:1%; display:inline;}
+	.theme_theme .noteBar .title {height:36px; line-height:36px; padding:0 0 0 15px; background:url(../images/myAppBg.gif);}
+	.theme_theme .noteBar .title h4 {font-size:14px; font-weight:bold;}
+	.theme_theme .noteBar li {padding:4px 12px; font-size:12px;}
+.theme_theme .mainArea {float:right; width:760px; background:#FFF;}
+.theme_theme .mainArea .iconSet {width:720px; margin:0 auto;}
+.theme_theme .mainArea .iconSet li {float:left;}
+/**/
+
+/*快件页3栏布局*/
+.theme_deliv_3cols {}
+.theme_deliv_3cols .sideBar {float:right; width:210px; margin:0; overflow:hidden; display:inline;}
+.theme_deliv_3cols .mainArea {float:left; width:550px; margin:5px;}
+.theme_deliv_3cols .contentArea {float:left; width:550px; margin:0 5px;}
+.theme_deliv_3cols .searchBar td {font-size:12px;}
+
+/*Full 布局*/
+.full .contentArea {float:right; width:810px; background:#FFF;}
+.full .contentArea .inputTable {padding-left:15px;}
+.full .sideBar {float:left; width:150px; background:#EBEBEB;}
+.NavArea {padding:10px; padding-left:28px; line-height:18px; height:430px; overflow:auto;}
+.NavArea li {margin-left:12px; list-style-image:url(../images/li.gif); list-style-position : outside;}
+.NavArea li ul li ul {}
+.NavArea ul li ul li ul li {list-style-image:none;}
+.xinYezhu {width:100%; height:50px; line-height:50px; padding:0; margin:0; font-size:14px; font-weight:bold; text-align:center; border-bottom:1px solid #bbb;}
+.xinYezhu a {padding:0.5em; background:#4889F0; color:white; font-weight:bold;}
+.xinYezhu a:hover {text-decoration:none; background:#5899FF;}
+.NavArea a:link, .NavArea a:visited {color:#000;}
+.NavArea .act a:link , .NavArea .act a:visited {font-weight:bold; color:#000;}
+.search2 {width:52px; height:26px; background:url(../images/search2.gif) no-repeat; border:none; padding:0; margin:0; cursor:pointer;}
+
+.showmessage {margin:10px; padding:10px; border:1px solid #ccc; width:50%;}
+.showmessage .title {padding-left:20px; height:33px; line-height:33px; border:1px solid #ccc;}
+.showbody, .showlink {padding-left:30px; padding-right:30px; font-size:14px; font-weight:bold; line-height:33px; outline:none;}
+
+.main .contentArea {width:960px; margin:0; padding:0;}
+
+/*Jquery 对话框*/
+#jd_shadow{z-index:999;position:absolute;background-color:#000000;filter:alpha(opacity=25);-moz-opacity:0.25;opacity:0.25;}
+#jd_dialog{z-index:1000;position:absolute;}
+#jd_dialog_s{position:absolute;background-color:#000000;filter:alpha(opacity=40);-moz-opacity:0.4;opacity:0.4;}
+#jd_dialog_m{position:absolute;}
+#jd_dialog_m_h{cursor:move; border-bottom: 1px solid #999;}
+#jd_dialog_m_h_l{float:left;color:black;font-weight:bold;padding-top:2px;padding-left:5px;}
+#jd_dialog_m_h_r{float:right;color:black;padding-top:2px;padding-right:5px;cursor:pointer;}
+#jd_dialog_m_b{float:left; width:100%;}
+#jd_dialog_m_b_1{position:absolute;alpha(opacity=0);-moz-opacity:0.0;opacity:0.0;z-index:900;}
+#jd_dialog_m_b_2{position:absolute;z-index:899;}
+#jd_dialog_m_t{float:left;width:100%;height:40px;padding-top:10px;text-align:center;}
+.jd_dialog_m_t_s{padding-left:10px;}
+
+.popupmenu_centerbox { border: 2px solid #aaa; background: #FFF; text-align: left; min-width:250px; max-width:550px; }
+    .popupmenu_centerbox h1 {margin:0 10px; padding:5px 0!important; padding:7px 0; color: #000; font-size: 14px; line-height: 20px; cursor: move;}
+
+    .popupmenu_centerbox .popupmenu_inner { padding: 10px; color: #444; }
+		.showmessagespan { font-size: 1.17em; padding: 0 0 10px 0; color: #3B5998; font-weight:bold;}
+        .popupmenu_centerbox .popupmenu_inner td{ line-height: 200%; }
+            .popupmenu_centerbox .popupmenu_inner .t_input, .popupmenu_centerbox .popupmenu_inner textarea{ margin: 5px 0; border-color: #CCC; }
+
+            .popupmenu_centerbox .float_del{ background-image: url(../images/delete.gif); float:right;}
+    .popupmenu_centerbox .box {width: 400px; }
+
+.float_cancel,
+.float_delete,
+.float_more{ float: right; margin: 0 10px 0 0; padding: 0; width: 16px; height: 16px; background: url(image/settingicon.gif) no-repeat; color: #DABAA9; line-height: 200px; overflow: hidden; display: block; }
+  .float_cancel { background-position: 0 -14px; }
+  .float_delete { background-position: 0 -31px; }
+  .float_more { position: absolute; margin: 5px 0 0 505px; background: url(../images/feedmoreicon.gif) no-repeat 0 0; color: #DABAA9; }
+
+.float_del, .float_edit { position: absolute; width: 13px; height: 14px; background: url(../images/delete.gif) no-repeat 0 0; top: 0.5em; right: 5px; text-indent: -999em; overflow: hidden; display: block; }
+    .float_del:hover { background-position: 0 -14px; }
+.float_block { background-image: url(../images/block.gif); }
+.float_edit { background-image: url(../images/edit.gif); right: 13px; }
+
+.dialogIcon {width:14px; height:14px; line-height:26px;margin:-1px 5px;}
+

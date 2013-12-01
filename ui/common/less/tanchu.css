@@ -1,0 +1,38 @@
+/*Jquery ¶Ô»°¿ò*/
+#jd_shadow{z-index:999;position:absolute;background-color:#000000;filter:alpha(opacity=25);-moz-opacity:0.25;opacity:0.25;}
+#jd_dialog{z-index:1000;position:absolute;}
+#jd_dialog_s{position:absolute;background-color:#000000;filter:alpha(opacity=40);-moz-opacity:0.4;opacity:0.4;}
+#jd_dialog_m{position:absolute;}
+#jd_dialog_m_h{cursor:move; border-bottom: 1px solid #999;}
+#jd_dialog_m_h_l{float:left;color:black;font-weight:bold;padding-top:2px;padding-left:5px;}
+#jd_dialog_m_h_r{float:right;color:black;padding-top:2px;padding-right:5px;cursor:pointer;}
+#jd_dialog_m_b{float:left; width:100%;}
+#jd_dialog_m_b_1{position:absolute;alpha(opacity=0);-moz-opacity:0.0;opacity:0.0;z-index:900;}
+#jd_dialog_m_b_2{position:absolute;z-index:899;}
+#jd_dialog_m_t{float:left;width:100%;height:40px;padding-top:10px;text-align:center;}
+.jd_dialog_m_t_s{padding-left:10px;}
+
+.popupmenu_centerbox { border: 2px solid #aaa; background: #FFF; text-align: left; min-width:250px; max-width:550px; }
+    .popupmenu_centerbox h1 {margin:0 10px; padding:5px 0!important; padding:7px 0; color: #000; font-size: 14px; line-height: 20px; cursor: move;}
+
+    .popupmenu_centerbox .popupmenu_inner { padding: 10px; color: #444; }
+		.showmessagespan { font-size: 1.17em; padding: 0 0 10px 0; color: #3B5998; font-weight:bold;}
+        .popupmenu_centerbox .popupmenu_inner td{ line-height: 200%; }
+            .popupmenu_centerbox .popupmenu_inner .t_input, .popupmenu_centerbox .popupmenu_inner textarea{ margin: 5px 0; border-color: #CCC; }
+            
+            .popupmenu_centerbox .float_del{ background-image: url(../images/delete.gif); float:right;}
+    .popupmenu_centerbox .box {width: 400px; }
+
+.float_cancel,
+.float_delete,
+.float_more{ float: right; margin: 0 10px 0 0; padding: 0; width: 16px; height: 16px; background: url(image/settingicon.gif) no-repeat; color: #DABAA9; line-height: 200px; overflow: hidden; display: block; }
+  .float_cancel { background-position: 0 -14px; }
+  .float_delete { background-position: 0 -31px; }
+  .float_more { position: absolute; margin: 5px 0 0 505px; background: url(../images/feedmoreicon.gif) no-repeat 0 0; color: #DABAA9; }
+
+.float_del, .float_edit { position: absolute; width: 13px; height: 14px; background: url(../images/delete.gif) no-repeat 0 0; top: 0.5em; right: 5px; text-indent: -999em; overflow: hidden; display: block; }
+    .float_del:hover { background-position: 0 -14px; }
+.float_block { background-image: url(../images/block.gif); }
+.float_edit { background-image: url(../images/edit.gif); right: 13px; }
+
+.dialogIcon {width:14px; height:14px; line-height:26px;margin:-1px 5px;}

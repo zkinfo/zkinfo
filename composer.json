@@ -1,0 +1,9 @@
+{
+    "require": {
+        "elasticsearch/elasticsearch": "~0.4",
+        "rogeriopradoj/codeigniter": "2.1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}

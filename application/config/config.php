@@ -26,7 +26,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +69,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'zh_cn';
 
 /*
 |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ $config['language']	= 'english';
 | that require a character set to be provided.
 |
 */
-$config['charset'] = 'UTF-8';
+$config['charset'] = 'utf-8';
 
 /*
 |--------------------------------------------------------------------------
@@ -180,7 +180,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -214,6 +214,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 |
 */
 $config['cache_path'] = '';
+//$config['cache_path'] = str_replace("\\", "/", FCPATH . APPPATH . 'cache');
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +225,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '00779832132';
+$config['encryption_key'] = '12#$gf&df4d(vxz';
 
 /*
 |--------------------------------------------------------------------------
@@ -244,15 +245,15 @@ $config['encryption_key'] = '00779832132';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'ci_session';
+$config['sess_cookie_name']		= 'mi_session';
 $config['sess_expiration']		= 7200;
 $config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= FALSE;
+$config['sess_encrypt_cookie']	= TRUE;
 $config['sess_use_database']	= FALSE;
-$config['sess_table_name']		= 'ci_sessions';
+$config['sess_table_name']		= 'ect_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;
-$config['sess_time_to_update']	= 300;
+$config['sess_time_to_update']	= 60;
 
 /*
 |--------------------------------------------------------------------------
@@ -265,10 +266,11 @@ $config['sess_time_to_update']	= 300;
 | 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
 |
 */
-$config['cookie_prefix']	= "";
-$config['cookie_domain']	= "";
+$config['cookie_prefix']	= "tlcjw_";
+$config['cookie_domain']	= ".tlcjw.com";
 $config['cookie_path']		= "/";
 $config['cookie_secure']	= FALSE;
+$config['cookie_expire']    = 86500;
 
 /*
 |--------------------------------------------------------------------------
@@ -279,7 +281,7 @@ $config['cookie_secure']	= FALSE;
 | COOKIE data is encountered
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -329,7 +331,7 @@ $config['compress_output'] = FALSE;
 |
 */
 $config['time_reference'] = 'local';
-
+date_default_timezone_set('Asia/Shanghai');
 
 /*
 |--------------------------------------------------------------------------
@@ -360,3 +362,31 @@ $config['proxy_ips'] = '';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
+
+/**
+ * ����sqlִ����估ʱ��
+ * Enter description here ...
+ * @var unknown_type
+ */
+$config['benchmarks']		= FALSE;
+$config['config']			= TRUE;
+$config['controller_info']	= FALSE;
+$config['get']				= FALSE;
+$config['http_headers']		= FALSE;
+$config['memory_usage']		= FALSE;
+$config['post']				= FALSE;
+$config['queries']			= TRUE;
+$config['uri_string']		= FALSE;
+
+
+//����
+//$config['sp_uid']="88010173";
+//$config['sp_pwd']="123.com";
+//$config['sp_url']="http://3tong.cn:8082/ema_new/http/SendSms";
+//http://3tong.cn:8082/ema_new/http/SendSms/Account=88010173&Password=cbff36039c3d0212b3e34c23dcde1456&Phone=13958099956&Content=¾ÍÊÇÀ´¿´¿´»î¶¯µ��
+
+//��ʽ
+$config['sp_uid']="837674";
+$config['sp_pwd']="zxf837674";
+$config['sp_url']="http://3tong.cn:8082/ema_new/http/SendSms";
+//http://3tong.cn:8080/ema_new/http/SendSms?Account=837674&Password=959bf529a66d8f2d90ab9b9f7f2bb58e&Phone=13958099956&Content=��ð�---aa&&

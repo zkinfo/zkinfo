@@ -1,0 +1,42 @@
+.close{
+	margin: 0;
+	padding: 0;
+	color: #E54040;
+	font-weight: normal;
+	font-size: 13px;
+	margin-left: 5px;
+	opacity: 1;
+	text-shadow:none;
+}
+table{
+	width:100%;
+} 
+td{
+	word-break: break-all;
+} 
+.t_head{
+	width:100px;
+	text-align: right;
+}
+.wiki ul{
+	margin: 0;
+}
+.wiki .per_wiki_tag{
+	float:left;
+	background: #efefef;
+	border-radius: 5px;
+	padding: 2px 5px;
+	color: #489BF0;
+	border: 1px solid #aaa;
+	margin-right: 5px;
+}
+.wiki .wiki_pic_show li{
+	float:left;
+	margin-right: 10px;
+}
+.wiki .wiki_pic_show li img{
+	max-height: 100px;
+	_height:100px;
+	max-width: 100px;
+	_width:100px;
+}

@@ -1,0 +1,226 @@
+/* Don't forget to include a CSS reset file otherwise it might look a little bit strange*/
+a:active,a:focus {
+	outline: expression(hideFocus='true');
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+#tabs,#tabs2,#tabs3,#tabs4,#tabs5 {
+	/*width: 500px;*/
+	margin: 0 auto;
+	/*margin-bottom: 40px;*/
+}
+
+#tabs .tab-top-ul li,#tabs2 .tab-top-ul li,#tabs3 .tab-top-ul li,#tabs4 .tab-top-ul li,#tabs5 .tab-top-ul li {
+	width: 55px;
+	float: left;
+	/*background: #2083BC;*/
+	/*margin-right: 2px;*/
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#1f88c2), to(#117eb9));
+	background-image:-webkit-linear-gradient(#1f88c2, #117eb9);
+	background-image:-moz-linear-gradient(#1f88c2, #117eb9);
+	background-image:-o-linear-gradient(#1f88c2, #117eb9);
+	background-image:linear-gradient(#1f88c2, #117eb9);
+}
+
+#tabs li a,#tabs2 li a,#tabs3 li a,#tabs4 li a,#tabs5 li a {
+	display: block;
+	padding: 7px 0 7px 15px;
+	/*background: #544f6b;*/
+	text-decoration: none;
+	/*color: white;*/
+}
+
+#tabs .tab-top-ul li a:hover,#tabs2 .tab-top-ul li a:hover,#tabs3 .tab-top-ul li a:hover,#tabs4 .tab-top-ul li a:hover,#tabs5 .tab-top-ul li a:hover {
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#2c8dc4), to(#89bcdb));
+	background-image:-webkit-linear-gradient(#2c8dc4, #89bcdb);
+	background-image:-moz-linear-gradient(#2c8dc4, #89bcdb);
+	background-image:-o-linear-gradient(#2c8dc4, #89bcdb);
+	background-image:linear-gradient(#2c8dc4, #89bcdb);
+}
+
+#tabs .tab-top-ul li.tabulous_active {
+	/*background: -webkit-gradient(linear, 0 0, 0 100%, from(#50A0D5), to(#ffffff));*/
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#1e85c0), to(#eaf3fa));
+	background-image:-webkit-linear-gradient(#1e85c0, #eaf3fa);
+	background-image:-moz-linear-gradient(#1e85c0, #eaf3fa);
+	background-image:-o-linear-gradient(#1e85c0, #eaf3fa);
+	background-image:linear-gradient(#1e85c0, #eaf3fa);
+}
+#tabs_container {
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	background: white;
+}
+
+#tabs_container div {
+	/*margin-right: 40px;*/
+	/*padding: 2px;*/
+}
+
+.transition {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.make_transist {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.hidescale {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.showscale {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.hideleft {
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.showleft {
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	transform: translateX(0px);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.hidescaleup {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.showscaleup {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.hideflip {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+
+	-webkit-transform: rotatey(-90deg) scale(1.1);
+	-moz-transform: rotatey(-90deg) scale(1.1);
+	-o-transform: rotatey(-90deg) scale(1.1);
+	-ms-transform: rotatey(-90deg) scale(1.1);
+	transform: rotatey(-90deg) scale(1.1);
+
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.showflip {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+
+	-webkit-transform: rotatey(0deg) scale(1);
+	-moz-transform: rotatey(0deg) scale(1);
+	-o-transform: rotatey(0deg) scale(1);
+	-ms-transform: rotatey(0deg) scale(1);
+	transform: rotatey(0deg) scale(1);
+
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+/*.tabulous_active {
+	background: white !important;
+	color: #655c89 !important;
+}*/
+
+.tabulousclear {
+	display: block;
+	clear: both;
+}

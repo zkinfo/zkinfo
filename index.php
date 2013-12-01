@@ -1,4 +1,7 @@
 <?php
+setlocale(LC_ALL, 'zh_CN');
+
+//require_once './vendor/autoload.php';
 
 /*
  *---------------------------------------------------------------
@@ -19,6 +22,7 @@
  *
  */
 	define('ENVIRONMENT', 'development');
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -28,23 +32,25 @@
  * By default development will show errors but testing and live will hide them.
  */
 
-if (defined('ENVIRONMENT'))
-{
 	switch (ENVIRONMENT)
 	{
 		case 'development':
 			error_reporting(E_ALL);
+			define('D_BUG', true);
 		break;
 	
 		case 'testing':
 		case 'production':
+			define('D_BUG', false);
 			error_reporting(0);
 		break;
 
 		default:
+			define('D_BUG', true);
 			exit('The application environment is not set correctly.');
 	}
-}
+	
+	//echo phpinfo();
 
 /*
  *---------------------------------------------------------------
@@ -56,7 +62,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = 'system';
+	$system_path = 'spirit';
 
 /*
  *---------------------------------------------------------------
@@ -98,7 +104,7 @@ if (defined('ENVIRONMENT'))
 	// if your controller is not in a sub-folder within the "controllers" folder
 	// $routing['directory'] = '';
 
-	// The controller class file name.  Example:  Mycontroller
+	// The controller class file name.  Example:  Mycontroller.php
 	// $routing['controller'] = '';
 
 	// The controller function you wish to be called.
@@ -163,7 +169,6 @@ if (defined('ENVIRONMENT'))
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 
 	// The PHP file extension
-	// this global constant is deprecated.
 	define('EXT', '.php');
 
 	// Path to the system folder
@@ -174,7 +179,6 @@ if (defined('ENVIRONMENT'))
 
 	// Name of the "system folder"
 	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
-
 
 	// The path to the "application" folder
 	if (is_dir($application_folder))
@@ -191,6 +195,23 @@ if (defined('ENVIRONMENT'))
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
 
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('MODPATH', $application_folder.'/modules/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/modules/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('MODPATH', BASEPATH.$application_folder.'/modules/');
+	}
+
+	set_include_path(APPPATH.'./third_party/');
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
@@ -199,7 +220,21 @@ if (defined('ENVIRONMENT'))
  * And away we go...
  *
  */
-require_once BASEPATH.'core/CodeIgniter.php';
+require_once BASEPATH.'core/CodeIgniter'.EXT;
+
+//调式状态删除编译模板后的源文件
+if(D_BUG) {
+  $dir = FCPATH.'./application/views/tpl_cache';
+  $dh=dir($dir);//打开目录
+  //列出目录中的所有文件
+  while ( $file = $dh->read()) {
+    $fullpath=$dir."/".$file;
+    if(is_file($fullpath)) {
+        unlink($fullpath);//删除目录中的所有文件
+    }
+  }
+  $dh->close();
+}
 
 /* End of file index.php */
 /* Location: ./index.php */

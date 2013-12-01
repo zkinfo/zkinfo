@@ -39,8 +39,15 @@
 */
 
 $route['default_controller'] = "work/work";
+$route['work/(:any)'] = "work/$1";
 $route['404_override'] = '';
 
+// $route['sms/(:any)'] = "sms/$1";
+// $route['cron/(:any)'] = "cron/$1";
+// $route['test/(:any)'] = "test/$1";
+// $route['trade/(:any)'] = "trade/$1";
+// $route['mobile/(:any)'] = "mobile/$1";
+// $route['analysis/(:any)'] = "analysis/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

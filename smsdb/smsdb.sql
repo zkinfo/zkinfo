@@ -184,7 +184,7 @@ CREATE TABLE `sms_user` (
   `password` varchar(64) DEFAULT NULL COMMENT '默认密码：学号后6的md5码',
   `user_name` varchar(50) DEFAULT NULL COMMENT '名称：用户真实姓名',
   `role_id` int(11) DEFAULT '0' COMMENT '1学生 2教师 3行政人员 100管理员',
-  `role_attribute` bigint(20) DEFAULT '0' COMMENT '角色权限属性，标记，按位与，每一位代表一种权限',
+  `attribute` tinyint(3) DEFAULT '0' COMMENT '0未登陆，1已登录',
   `ip` varchar(24) DEFAULT NULL COMMENT 'ip',
   `last_ip` varchar(24) DEFAULT NULL COMMENT 'ip',
   `status` tinyint(3) DEFAULT '0' COMMENT '用户状态，0默认有效，-1删除，1待激活 9待审核',

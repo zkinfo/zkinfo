@@ -1,9 +1,31 @@
+*.bak
 .DS_Store
+Thumbs.db
+composer.lock
 
-application/cache/*
-!application/cache/index.html
-!application/cache/.htaccess
+/data
+/application/cache/*.cache
+/application/lock
+/application/data
+/application/logs/*.log
+/application/logs/*.php
+/application/logs/INFO
+/application/cron/logs/*.log
+/application/views/tpl_cache/*.php
+/application/config/development
+/application/config/development/database.php
+/application/third_party/predis
+/ui/js/plugin/kineditor/attached/*
 
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
+/.project
+/.settings
+/.buildpath
+/nbproject/private/
+/nbproject/project.properties
+/nbproject/project.xml
+
+/application/logs/data/
+/composer.lock
+/vendor/phpunit
+/vendor/rogeriopradoj
+/vendor/bin

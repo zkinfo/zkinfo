@@ -1,0 +1,79 @@
+﻿API列表(核心业务逻辑层)
+
+miapi.user 用户
+miapi.user.address 用户地址
+
+miapi.shop 店铺
+miapi.shop.items 店铺商品
+
+miapi.trade 交易
+miapi.trade.order 交易单
+
+miapi.spot 网点(内部)
+
+miapi.delivery n.配送
+miapi.delivery.order 配送单
+miapi.dispatch v.派收
+miapi.dispatch.order 派收单
+
+miapi.item 商品
+miapi.item.cate 商品类目
+miapi.item.spu 产品
+
+miapi.sms 短信服务
+miapi.sms.send 发送短信
+
+
+一、派收服务API
+	1.1.创建快递单
+	miapi.delivery.order.create
+	1.2.查询快递单信息
+	miapi.delivery.order.get
+	1.3.删除快递单
+	miapi.delivery.order.delete
+	1.4.修改快递单
+	miapi.delivery.order.update
+
+    ?   1.5.订单发货处理
+	miapi.delivery.order.send
+    ?   1.6.快递单流水日志
+	miapi.delivery.order.logs
+
+    ?   1.7.快递单数量
+	miapi.delivery.order.counts
+    ?   1.8.快递单列表
+	miapi.delivery.order.list
+
+二、供应链API
+	2.1.类目
+	2.1.1.查询类目列表
+	miapi.item.cate.list
+	2.1.2.添加一个类目
+	miapi.item.cate.add
+	2.1.3.某个类目详情
+	miapi.item.cate.get
+	
+
+	2.2.商品
+	2.2.1.添加一个商品
+	miapi.item.add
+	2.2.2.删除一个商品
+	miapi.item.delete
+	2.2.3.某个商品详情
+	miapi.item.get
+	2.2.4.修改一个商品
+	miapi.item.update
+
+	2.2.5.查询商品列表, 默认自己发布的商品
+	miapi.item.list
+	2.2.6.查询商品数量, 默认自己发布的商品
+	miapi.item.count
+
+	2.3.SPU最小单元库存, 拟如下：
+	miapi.item.spu.add
+	miapi.item.spu.get
+	miapi.item.spu.delete
+	miapi.item.spu.update
+
+三、网点提供的服务 ?
+	3.x

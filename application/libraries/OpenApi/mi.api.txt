@@ -1,0 +1,53 @@
+Mi.api
+
+相关文件：
+libraries\OpenApi
+│  api.txt   //API开放列表
+│  ApiClient.php  //SDK client
+│  ApiConfig.php  //SDK client config
+│  ApiErrInfo.php  //错误码
+│  ApiHelper.php  //签名函数 CS共享
+│  ApiRequest.php  //SDK 请求函数
+│  ApiRouter.php    //API定义路由
+│  ApiServer.php    //API Service
+│  
+└─ApiLib
+        Api_delivery_order.php  //delivery api
+        Api_developer.php  //developer api  - for test
+        Api_item.php   //item api
+        Api_item_cate.php  //item cate api
+        Api_shop.php    //shop api
+        Api_spot.php  //spot api
+
+modules\api
+|  api.php  //api 服务端控制器  api主要入口
+|  client.php  //api 客户端控制器  SDK 组成部分
+|  clientxudb.php  //  大兵的测试客户端
+
+
+/*
+	API 会话建立流程:
+
+	1.设备授权 api/auth
+		(appid, device_id, auth_time) + appkey = sign
+		返回设备授权Code: auth_code
+		设备授权，可以一次授权，长期使用，客户端可长期保存
+
+	2.获取会话 api/token
+		(appid, device_id, auth_code, [account, mobile], md5(pwd), token_time) + appkey = sign
+		返回会话: token
+		会话有时限，，根据token_time发起时间设立失效，具体另定
+
+	3.请求数据 api
+		(appid, device_id, api, [api_params], token, [uid, mobile], request_time) + appkey = sign
+		返回数据
+
+	测试环境的应用ID和密钥：
+	appid = 500
+	appkey = 34aee295a97053a348644263217e2e5b
+
+	测试环境地址：
+	http://git.500mi.org:81/api
+	http://git.500mi.org:81/api/auth
+	http://git.500mi.org:81/api/token
+*/

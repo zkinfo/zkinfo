@@ -1,0 +1,54 @@
+﻿1 目录结构及文件说明 release.
+根目录下文件
+mod.php   模块入口
+admin.php 平台业务管理入口
+common.php 公用库引入
+config.php 配置文件
+
+libs 基础库文件，与业务无关
+      class 开头的文件与ECTOOLS无关，可以给任何的PHP工程引用
+	  fuction_ 开头的文件为ECTOOLS定制的相关库
+	  其他第三方库放到单独目录下
+	  smarty 模板引擎
+modules 业务模块文件，每个独立的业务模块都单独放到一个目录里面 
+      common 公用业务逻辑，与单独业务模块无关。
+			 taobao 淘宝业务接口封装
+	  XXX  单一业务模块 （比如营销模块MKT下投票子模块VOTE）
+	       tpl 模板文件目录 XXXA.html
+		   image 模块图片文件		   
+		   XXXA.PHP 源文件直接放根目录下
+		   （其中每个子模块下源文件及模块的命名规则：模块_子模块_功能；
+		     比如：源文件MKT_VOTE.PHP；模板MKT_VOTE_LIST.HTML，MKT_VOTE_VIEW.HTML）
+           xxxa_admin_ 开头的源文件为子功能模块的用户后台管理	
+		   xxxa_funciton_ 开头的为子功能模块前后台都需要的功能函数
+	  （其中：
+	  MKT  营销类业务MAREKTING
+	  USER 用户类业务
+	  SERVICE 服务类业务）
+admin 后台业务及管理，用于平台部分
+      XXX.PHP 源文件直接放根目录下
+	  fuction_ 开头的为后台业务公用函数库
+	  tpl 模板文件
+api 对外调用接口
+	tbsdk  淘宝TOP接口
+	ecboss_client ECBOSS PLATFORM客户端接口
+	xiaonei 校内
+	sina    新浪	
+language 语言包
+images 公用图片
+attachments  用户附件
+data 配置、模板缓存临时目录
+install 安装脚本，暂时不用
+
+2 规范
+  modules 基于规则，源文件与模板名称对应
+  业务模块内的变量以 模块_子模块_ 开头
+  language 以 模块_子模块_ 开头
+  m(modules) 模块；do（功能）；ac(action 行为) op（opration操作）
+  
+  例：关注有礼系统设置
+ * 模块无论分多少级，目录上只区分一级模块，源文件统一放到一级模块下,以子模块+功能命名
+ * http://ectools.com/mod.php?m=mkt_mkt2_follow&do=set
+ * 静态化后：http://ectools.com/mod-m-mkt_mkt2_follow-do-set.html
+ * 对应目录  源文件： modules/mkt/mkt2_follow_set.php  源文件内引用模板只需引用模板名（template(mkt2_follow_set)）  
+ * 模板： modules/mkt/tpl/mkt2_follow_set.htm

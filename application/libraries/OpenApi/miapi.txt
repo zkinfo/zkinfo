@@ -1,0 +1,69 @@
+﻿/************************************************************
+ *
+ * miapi
+ * @owner 	danchex
+ * @author 	danchex
+ *
+*************************************************************/
+
+/*用户API*/
+miapi.user.login
+    入参：
+    	account, mobile 二选一
+    	password md5(string)
+    返回：
+    	coupons 优惠券详情
+
+miapi.user.register
+miapi.user.active
+miapi.user.bind
+miapi.user.get
+miapi.user.address.get
+miapi.user.address.add
+
+/*店铺API*/
+miapi.shops.list
+miapi.shop.get
+miapi.shop.follow
+    入参：user_id shop_id
+    返回: error = 0 成功  error_msg 具体信息
+    参见: http://api.api.500mi.com/api/client/shop/follow
+miapi.shop.follow.list
+    入参：user_id
+    返回: 
+          error = 0 成功  error_msg 具体信息
+          shops 店铺数组 
+    参见: http://api.api.500mi.com/api/client/shop/follow_list
+miapi.shop.unfollow
+    入参：user_id shop_id delete_address(可选，是否同时删除收货地址)
+    返回: error = 0 成功  error_msg 具体信息
+    参见: http://api.api.500mi.com/api/client/shop/unfollow
+miapi.shop.items.list
+
+
+/*交易API*/
+miapi.trade.order.get
+miapi.trade.order.list
+miapi.trade.order.count
+miapi.trade.order.create
+miapi.trade.order.receive
+
+/*优惠券(预付费)API*/
+miapi.coupons.imprest.get
+    入参：user_id, tid
+    返回：coupons 优惠券详情
+miapi.coupons.imprest.items.get
+    入参：user_id, tid
+    返回：items 优惠券商品详情
+miapi.coupons.imprest.list
+    入参：user_id
+    返回：coupons 用户优惠券列表
+miapi.coupons.imprest.count
+    入参：user_id
+    返回：coupons_count 用户优惠券数量
+miapi.coupons.imprest.delivery.request
+    入参：user_id, tid, book_time
+    返回：优惠券发货请求
+miapi.coupons.imprest.receive
+    入参：user_id, tid
+    返回：优惠券详情

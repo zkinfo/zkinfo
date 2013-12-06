@@ -32,6 +32,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		var_dump($this->ci->session->userdata('account'));
 		$this->layout->template('index');
 	}
 

@@ -35,6 +35,7 @@ class Auth
 
 		$identity = 'account';
 		//var_dump($this->ci->session->all_userdata());
+		var_dump($this->ci->session->userdata('account'));
 		$islogin = (bool) $this->ci->session->userdata($identity);
 		//var_dump($islogin);die('111');
 

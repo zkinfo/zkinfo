@@ -24,14 +24,10 @@ class MY_Controller extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('array');
 		$this->load->helper('view');
-		$is_weihu = $this->config->item('is_weihu');
-		if ($is_weihu == TRUE && $this->router->fetch_class() != 'work' && $this->router->fetch_method() != 'system_maintenance') {
-			redirect();
-		} else if ($is_weihu == FALSE) {
-			// 检查登录状态
-			$this->check_auth();
-		}
+		$this->check_auth();
+
 		$this->_data['role_id'] = $this->session->userdata('role_id');
+		var_dump($this->_data['role_id']);die;
 	}
 
 	/**
@@ -50,7 +46,7 @@ class MY_Controller extends CI_Controller {
 		if ( ! $this->auth->check_auth() ) {
 			redirect('http://www.tlcjw.com/login', 'refresh');
 		} else {
-			redirect('http://www.tlcjw.com/work', 'refresh');
+			//redirect('http://www.tlcjw.com/work', 'refresh');
 		}
 
 		/*// 检查ACL权限

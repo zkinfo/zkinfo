@@ -119,6 +119,14 @@
 			height:22px; 
 			color:#c04103; 
 			font-size:14px;
+			background:url(/ui/img/login_index/login.jpg) no-repeat;
+		}
+		.login{
+			position: absolute;
+			width: 80px;
+			height: 20px;
+			opacity: 0;
+			cursor: pointer;
 		}
     </style>
     <script>
@@ -149,8 +157,8 @@
 
 				密&nbsp;&nbsp;码： <input name="password" type="password" class="user"></div>
 				<div class="button">
-				<input type="image" src="/ui/img/login_index/login.jpg" class="login">
-                <input style="margin-left:28px;" type="image" src="/ui/img/login_index/qx.png" onClick="this.form.reset();return false;"></div>
+				<input type="button" class="login">
+                <input style="margin-left:115px;" type="image" src="/ui/img/login_index/qx.png" onClick="this.form.reset();return false;"></div>
             </form>
         </div>
         <!-- #login_right end -->

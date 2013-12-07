@@ -32,7 +32,6 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		var_dump($this->ci->session->userdata('account'));
 		$this->layout->template('index');
 	}
 
@@ -55,7 +54,7 @@ class Login extends CI_Controller {
 				$userSession['uid'] = $user['id'];
 				$userSession['mobile'] = $user['mobile'];
 				$this->setSession($userSession);
-				return 5;//帐号待激活
+				return 5;//帐号待激�?
 			};*/
 			//var_dump($this->ci->session->set_userdata(array("login_info"=>"0")));
 			$this->ci->session->set_userdata(array("login_info"=>"0"));
@@ -86,8 +85,8 @@ class Login extends CI_Controller {
 				'attribute'		=> $cookies['attribute'],
 			);
 		//$expi = $cookies['type'] == 3 ? 600 : 2*7*24*60*60;
-		//$this->ci->session = new CI_Session(array('sess_expiration' => $expi)); //原生对象可以支持构造参数
-		//$this->ci->load->library('session',array('sess_expiration' => 123400));  //Loader 不能很好支持构造参数
+		//$this->ci->session = new CI_Session(array('sess_expiration' => $expi)); //原生对象可以支持构�?�参�?
+		//$this->ci->load->library('session',array('sess_expiration' => 123400));  //Loader 不能很好支持构�?�参�?
 		$this->ci->session->set_userdata($session_data); //var_dump($this->ci->session); die;
 		//$this->ci->load->library('logger');
 		//$this->login_Log();

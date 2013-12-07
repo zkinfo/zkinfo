@@ -26,16 +26,16 @@
         #login_announcement {
             margin-top: 40%;
             width:310px;
-            height:255px;
+            height:355px;
             background:url(/ui/img/login_index/announcement.png) no-repeat;
             text-align: left;
             overflow: hidden;
         }
         #login_announcement_container {
-            margin-top:30px;
-            margin-left: 25px;
+            margin-top:60px;
+            margin-left: 45px;
             width:235px;
-            height:160px;
+            height:260px;
             overflow:hidden;
         }
         #login_announcement_title {
@@ -46,7 +46,7 @@
             font-size:12px;
             line-height: 10px;;
             margin-top: 10px;
-            height:132px;
+            height:190px;
             overflow: auto;
         }
         #login_announcement_content p {
@@ -57,15 +57,17 @@
         
         /*left end*/
         #login_right {
-            width:440px; 
+            width:478px; 
             height:100%;
+			border: 3px solid #7bd0bc;
+			
             background-image:url(/ui/img/login_index/right.jpg);
             background-size:cover; 
-            margin-right:15%;
+            margin-right:10%;
             float:right;
         }
         #login_form_container {
-            margin:125px auto;
+            margin:150px auto;
             background:url(/ui/img/login_index/login_form.png) no-repeat;
             height:400px;
             width:400px;
@@ -99,6 +101,25 @@
         #cancel {
             margin-left: 30px;
         }
+		.user {
+			height:18px; 
+			width:130px; 
+			border: 1px solid; 
+			border-color: #5b9b8e;
+		}
+		.up{
+			color:#FFFFFF;
+			font-size:12px;
+			margin-top:140px;
+			margin-left:130px;
+		}
+		.button{
+			margin-left:130px; 
+			margin-top:10px; 
+			height:22px; 
+			color:#c04103; 
+			font-size:14px;
+		}
     </style>
     <script>
         window.onload = function(){
@@ -112,11 +133,10 @@
         <div id="login_left">
             <div id="login_announcement">
                 <div id="login_announcement_container">
-                    <strong id="login_announcement_title">最新公告</strong>
                     <div id="login_announcement_content">
-                        <p>我们一直很重视用户账号的安全问题，"账号安全"是我们最为关注的工作之一。</p>
-                        <p>我们希望用户可以快捷方便，又安全无虑地登录网站，并与您的朋友通网站交流联系。</p>
-                        <p>所以，保证用户账号安全可靠，是我们的重要目标。</p>
+                        <p>我们希望用户可以快捷方便，又安全无虑地登录网站，并与您的朋友通网交流!!!呵呵~~~</p>
+                        <p>我们希望用户可以快捷方便，又安全无虑地登录网站，并与您的朋友通网交流!!!</p>
+                        <p>我们希望用户可以快捷方便，又安全无虑地登录网站，并与您的朋友通网交流!!!哈哈~~~</p>
                     </div>
                 </div>
             </div>
@@ -124,20 +144,13 @@
         <!-- #login_left end -->
         <div id="login_right">
             <form id="login_form_container">
-                <dl id="form_content">
-                    <dd>
-                        <label for="username">用户名：</label>
-                        <input type="text" name="account" id="account" required />
-                    </dd>
-                    <dd>
-                        <label for="password"><span>密</span>码：</label>
-                        <input type="password" name="password" id="password" required />
-                    </dd>
-                    <dd>
-                        <input type="button" class="login_form_button login" value="登  录" />
-                        <input type="button" class="login_form_button" id="cancel" value="取  消" />
-                    </dd>
-                </dl>
+                <div class="up">
+				用户名： <input name="username" type="text" class="user"><br><br>
+
+				密&nbsp;&nbsp;码： <input name="psd" type="text" class="user"></div>
+				<div class="button">
+				<input type="image" src="/ui/img/login_index/login.jpg">
+                <input style="margin-left:28px;" type="image" src="/ui/img/login_index/qx.png" onClick="this.form.reset();return false;"></div>
             </form>
         </div>
         <!-- #login_right end -->
@@ -154,7 +167,7 @@ $(function(){
             if(data == 1) {
                 location.reload();  
            } else {
-                alert('密码错误！');
+                alert('密码错误?');
            }
            
         });

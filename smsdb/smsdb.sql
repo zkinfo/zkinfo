@@ -61,7 +61,7 @@ CREATE TABLE `sms_class` (
   `class_name` varchar(50) DEFAULT NULL,
   `sum_student` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`class_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `sms_class_score`
@@ -88,7 +88,7 @@ CREATE TABLE `sms_class_score` (
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`class_score_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `sms_grade`
@@ -101,7 +101,7 @@ CREATE TABLE `sms_grade` (
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`grade_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `sms_purview`
@@ -227,7 +227,7 @@ CREATE TABLE `std_extra_exam` (
   `cdate` datetime DEFAULT NULL,
   `edate` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`extra_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `std_property`
